@@ -1,17 +1,17 @@
 This project is a drivation of the LAPS implementation.
-Which you can read about here ........
+Which you can read about here 
 
 In this project, instead of building a library of program abstractions we aim to build a library of prompts, 
 essentially, reusable natural language templates and the related generated programs that guide an LLM in solving program synthesis tasks.
 
-We choose the LOGO graphics dataset. Our inputs will be json files similar to .......
+We choose python lnaugage for development and the LOGO graphics dataset. Our inputs will be json files similar to ./Data/ascii_output_updated.json
 Here's the flow of the program:
 
 
 First Stage:
 Based on the image description, label, and the asccii representation of the image,
 First we need an LLM call (use LangChain for all LLM calls) to break down the task. The label is either "compositional" or "complex". 
-Compositional images are a number of building blocks that have been positioned next to each other and the complex images are sometimes a combination of building blocks and other times cannot be broken down to building blocks.
+Compositional images are a number of building blocks that have been positioned with respect to each other and the complex images are sometimes a combination of building blocks and other times cannot be broken down to building blocks.
 
 For exmaple if the description is "a small hexagon separated by a big space from a small circle"
 then the LLM should be instructed to break down the problem into "Building Blocks" and the "Program Instruction"
@@ -47,9 +47,9 @@ The library is a dictionary of objects each having 3 fields:
 if one of the building blocks can't be found in the library then we will go to the third stage.
 if all the building blocks are in the library then we will go to the stage four.
 
-b) if the LLM has not given us any building blocks and has determined that the image cannot be broken down to smaller components.
-then there should be an LLM call using the "Program Instruction" as the prompt to guide the LLM to generate a program that draws the image. 
-Then takes the generated program and the prompt for it and add that as the "Prompt" to the library. The tag will be................. 
+b) if the LLM has not given us any building blocks and has determined that the image cannot be broken down to smaller components, we will treat the entire image as a building block.
+Then there should be an LLM call using the "Program Instruction" as the basis of a prompt to guide the LLM to generate a tag, tldr, and the program that draws the image. 
+Then takes the generated program and the prompt for it and add that as the "Prompt" along with "tag" and "tldr" to the library.
 
 
 Third Stage:
@@ -60,12 +60,32 @@ so the response from the LLM should be:
 tag: circle
 tldr: draw a circle on a black canvas
 program:
-........
+```
+import turtle
+
+# Set up the screen
+screen = turtle.Screen()
+screen.bgcolor("white")
+
+# Create turtle
+my_turtle = turtle.Turtle()
+my_turtle.pensize(3)            # Set the border thickness
+my_turtle.color("black")        # Use black color for the border
+my_turtle.speed(1)
+
+# Draw the circle with no fill
+my_turtle.circle(100)           # Radius of the circle
+
+# Wait for user click to close the window
+screen.exitonclick()
+```
+
 
 After this stage we will go back to the second stage.
 
 Fourth Stage:
-Now that we have the building blocks in the library we will plug in the pormpts for them from the library into one detailed prompt that will help us generate the program that will draw the original image.
+Now that we have the building blocks in the library we will plug in the pormpts for them from the library into one detailed final prompt that will help us generate the program that will draw the original image.
+Then you should draw the image using turtle and save it in ./output
 
 
 
