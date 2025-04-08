@@ -1,0 +1,73 @@
+This project is a drivation of the LAPS implementation.
+Which you can read about here ........
+
+In this project, instead of building a library of program abstractions we aim to build a library of prompts, 
+essentially, reusable natural language templates and the related generated programs that guide an LLM in solving program synthesis tasks.
+
+We choose the LOGO graphics dataset. Our inputs will be json files similar to .......
+Here's the flow of the program:
+
+
+First Stage:
+Based on the image description, label, and the asccii representation of the image,
+First we need an LLM call (use LangChain for all LLM calls) to break down the task. The label is either "compositional" or "complex". 
+Compositional images are a number of building blocks that have been positioned next to each other and the complex images are sometimes a combination of building blocks and other times cannot be broken down to building blocks.
+
+For exmaple if the description is "a small hexagon separated by a big space from a small circle"
+then the LLM should be instructed to break down the problem into "Building Blocks" and the "Program Instruction"
+Here the LLM can also decide that the image cannot be broken down to any of the building blocks.
+The building blocks should be one of the following:
+Line
+ZigZag
+Circle
+Semi-circle
+Triangle
+Square
+Rectangle
+Pentagon
+Hexagon
+Heptagon
+Octagon
+Nonagon
+
+So the result of the first stage for the given example should be something like:
+
+Building Blocks: [hexagon, circle]
+Program Instruction: Put the hexagon to the left of the circle with a large distance between them. Make the hexagon smaller compared to the circle.
+
+Second Stage:
+The second stage will take different routes based on the response from the previous stage.
+a) If the LLM has provided us with building blocks:
+then we will search the library which is just a json file in the ./library folder, to find the prompt to draw those building blocks.
+The library is a dictionary of objects each having 3 fields: 
+"tag": name of the building block (e.g. "circle")
+"tldr": short summary of the pormpt
+"prompt": the prompt to generate the program that draws the building block
+
+if one of the building blocks can't be found in the library then we will go to the third stage.
+if all the building blocks are in the library then we will go to the stage four.
+
+b) if the LLM has not given us any building blocks and has determined that the image cannot be broken down to smaller components.
+then there should be an LLM call using the "Program Instruction" as the prompt to guide the LLM to generate a program that draws the image. 
+Then takes the generated program and the prompt for it and add that as the "Prompt" to the library. The tag will be................. 
+
+
+Third Stage:
+In this stage we want to generate programs that will draw the building blocks.
+There should be an LLM call to generate the program that will draw the building block and then the program along with the initial prompt for this stage
+will be added as the "Prompt" to the library. Along with the "tag" and "tldr" which should be provided by the LLM as well.
+so the response from the LLM should be:
+tag: circle
+tldr: draw a circle on a black canvas
+program:
+........
+
+After this stage we will go back to the second stage.
+
+Fourth Stage:
+Now that we have the building blocks in the library we will plug in the pormpts for them from the library into one detailed prompt that will help us generate the program that will draw the original image.
+
+
+
+
+
