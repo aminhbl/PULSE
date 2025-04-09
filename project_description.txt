@@ -1,15 +1,16 @@
-This project is a drivation of the LAPS implementation.
+This project is a derivation of the LAPS implementation.
 Which you can read about here 
 
 In this project, instead of building a library of program abstractions we aim to build a library of prompts, 
 essentially, reusable natural language templates and the related generated programs that guide an LLM in solving program synthesis tasks.
 
-We choose python lnaugage for development and the LOGO graphics dataset. Our inputs will be json files similar to ./Data/ascii_output_updated.json
+We choose python lanugage for development and the LOGO graphics dataset. Our input will be a json file with objects having "file_name", "label", and "description".
+
 Here's the flow of the program:
 
 
 First Stage:
-Based on the image description, label, and the asccii representation of the image,
+Based on the image description and the label of the image,
 First we need an LLM call (use LangChain for all LLM calls) to break down the task. The label is either "compositional" or "complex". 
 Compositional images are a number of building blocks that have been positioned with respect to each other and the complex images are sometimes a combination of building blocks and other times cannot be broken down to building blocks.
 

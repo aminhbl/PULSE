@@ -1,5 +1,3 @@
-# Using python turtle write a python program to Draw a Circle with a solid border.
-
 import turtle
 
 # Set up the screen
@@ -13,8 +11,15 @@ my_turtle.color("black")        # Use black color for the border
 my_turtle.speed(1)
 
 # Draw the circle with no fill
-my_turtle.circle(100)           # Radius of the circle
+radius = 50                     # Radius of the circle
+
+# Move to starting position
+my_turtle.penup()
+my_turtle.goto(0, -radius)      # Position to draw from bottom of circle
+my_turtle.pendown()
+
+# Draw the circle
+my_turtle.circle(radius)
 
 # Wait for user click to close the window
 screen.exitonclick()
-

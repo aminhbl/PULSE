@@ -1,0 +1,17 @@
+[
+  {
+    "file_name": "img_0.png",
+    "label": "compositional",
+    "description": "a small hexagon separated by a big space from a small circle"
+  },
+  {
+    "file_name": "img_1.png",
+    "label": "compositional",
+    "description": "a triangle above a square"
+  },
+  {
+    "file_name": "img_2.png",
+    "label": "complex",
+    "description": "a spiral shape with three turns"
+  }
+]

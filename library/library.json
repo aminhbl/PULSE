@@ -1,0 +1,24 @@
+{
+  "building_blocks": [
+    {
+      "tag": "circle",
+      "tldr": "Draw a circle on a white canvas with black border",
+      "prompt": "Generate a Python Turtle program that draws a circle with a black border on a white background. The circle should have a radius of 100 pixels and no fill color."
+    },
+    {
+      "tag": "square",
+      "tldr": "Draw a square on a white canvas with black border",
+      "prompt": "Generate a Python Turtle program that draws a square with a black border on a white background. The square should have a side length of 100 pixels and no fill color."
+    },
+    {
+      "tag": "triangle",
+      "tldr": "Draw an equilateral triangle on a white canvas with black border",
+      "prompt": "Generate a Python Turtle program that draws an equilateral triangle with a black border on a white background. The triangle should have a side length of 100 pixels and no fill color."
+    },
+    {
+      "tag": "hexagon",
+      "tldr": "Draw a hexagon on a white canvas with black border",
+      "prompt": "Generate a Python Turtle program that draws a regular hexagon with a black border on a white background. The hexagon should have a side length of 50 pixels and no fill color."
+    }
+  ]
+}
