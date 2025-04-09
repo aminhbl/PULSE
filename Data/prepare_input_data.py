@@ -3,7 +3,7 @@ import json
 from PIL import Image
 import numpy as np
 
-def image_to_ascii(image_path, output_width=80):
+def image_to_ascii(image_path, output_width=30):
     """Converts a PNG image to ASCII art using digits 0-9."""
 
     try:
@@ -33,7 +33,7 @@ def image_to_ascii(image_path, output_width=80):
 
     return ascii_image
 
-def process_folder_to_json(folder_path, output_json="ascii_logo_input_data.json"):
+def process_folder_to_json(folder_path, output_json="ascii_logo_input_data_30.json"):
     output_data = []
 
     for file_name in os.listdir(folder_path):
@@ -79,7 +79,7 @@ def print_ascii_from_json(json_file, n=5):
 def main():
     process_folder_to_json("Data/logo_data")
 
-    json_file = "ascii_logo_input_data.json"  # Adjust if different
+    json_file = "ascii_logo_input_data_30.json"  # Adjust if different
     n = 3  # Change this number to control how many items to display
     print_ascii_from_json(json_file, n)
 
