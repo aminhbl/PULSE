@@ -4,8 +4,10 @@ import sys
 from typing import Dict, List, Optional, Tuple, Union
 
 from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
+from dotenv import load_dotenv
 
 # Constants
 LIBRARY_PATH = "library/library.json"
@@ -74,7 +76,7 @@ class PULSE:
             raise ValueError("OpenAI API key is required. Please provide it as an argument or set the OPENAI_API_KEY environment variable.")
         
         # Initialize LangChain LLM
-        self.llm = OpenAI(temperature=0.7)
+        self.llm =  ChatOpenAI(model="gpt-4o-mini", temperature=0)
         
         # Initialize the prompt library
         self.library = PromptLibrary()
@@ -100,7 +102,7 @@ class PULSE:
         Label: {label}
         
         The building blocks should be one of the following:
-        Line, ZigZag, Circle, Semi-circle, Triangle, Square, Rectangle, Pentagon, Hexagon, Heptagon, Octagon, Nonagon
+        Line, Circle, Semi-circle, Triangle, Square, Rectangle, Pentagon, Hexagon, Heptagon, Octagon, Nonagon
         
         If the image cannot be broken down into these building blocks, indicate that no building blocks are applicable.
         
@@ -255,7 +257,7 @@ class PULSE:
                     break
             
             # Add the building block to the library
-            prompt = f"Generate a Python Turtle program that draws a {tag}. {tldr}"
+            prompt = f"Generate a Python Turtle program that draws a {tag}. {tldr}" + " " + program
             self.library.add_building_block(tag, tldr, prompt)
             
             # Save the program to a file
@@ -263,7 +265,7 @@ class PULSE:
             with open(program_path, 'w') as f:
                 f.write(program)
     
-    def stage_four(self, found_blocks: List[Dict], program_instruction: str, output_filename: str) -> str:
+    def stage_four(self, found_blocks: List[Dict], program_instruction: str, figure: str, output_filename: str) -> str:
         """
         Stage Four: Generate the final program that draws the original image.
         
@@ -286,19 +288,14 @@ class PULSE:
         stage_four_template = """
         You are an expert in generating Python Turtle programs to draw complex images.
         
-        I need you to create a program that combines multiple building blocks according to specific instructions.
+        I need you to create a program according to the specific instructions.
         
-        Building blocks available:
-        {block_info}
-        
-        Instructions for arrangement:
+        Instructions:
         {program_instruction}
         
-        Please provide a Python Turtle program that:
-        1. Creates a white background
-        2. Draws each building block with a black border and no fill
-        3. Arranges the building blocks according to the instructions
-        4. Includes proper setup and cleanup
+        You can use the following building blocks to create the image:
+        Building blocks available and the program for each block:
+        {block_info}
         
         Your response should be only the Python Turtle program without any additional text:
         
@@ -311,13 +308,14 @@ class PULSE:
         
         # Create the LLMChain for Stage Four
         stage_four_prompt = PromptTemplate(
-            input_variables=["block_info", "program_instruction"],
+            input_variables=["block_info", "program_instruction", "figure"],
             template=stage_four_template
         )
+        
         stage_four_chain = LLMChain(llm=self.llm, prompt=stage_four_prompt)
         
         # Execute the chain
-        response = stage_four_chain.run(block_info=block_info_str, program_instruction=program_instruction)
+        response = stage_four_chain.run(block_info=block_info_str, program_instruction=program_instruction, figure=figure)
         
         # Extract the program code
         program = ""
@@ -333,7 +331,7 @@ class PULSE:
         
         return program_path
     
-    def process_image(self, file_name: str, label: str, description: str) -> str:
+    def process_image(self, file_name: str, label: str, figure: str, description: str) -> str:
         """
         Process an image description and generate a Turtle program to draw it.
         
@@ -362,7 +360,7 @@ class PULSE:
             print("\nStage Two Result: All building blocks found in the library")
             # Stage Four: Generate the final program
             output_filename = os.path.splitext(file_name)[0]
-            program_path = self.stage_four(blocks, stage_one_result["program_instruction"], output_filename)
+            program_path = self.stage_four(blocks, stage_one_result["program_instruction"], figure, output_filename)
             print(f"\nStage Four Result: Program generated at {program_path}")
         else:
             if not stage_one_result["building_blocks"]:
@@ -450,7 +448,7 @@ class PULSE:
                 if all_found:
                     # Stage Four: Generate the final program
                     output_filename = os.path.splitext(file_name)[0]
-                    program_path = self.stage_four(blocks, stage_one_result["program_instruction"], output_filename)
+                    program_path = self.stage_four(blocks, stage_one_result["program_instruction"], figure, output_filename)
                     print(f"\nStage Four Result: Program generated at {program_path}")
                 else:
                     print("\nError: Still missing building blocks after Stage Three")
@@ -460,6 +458,7 @@ class PULSE:
 def main():
     """Main function to run the PULSE system."""
     # Check if OpenAI API key is provided
+    load_dotenv()
     api_key = os.environ.get("OPENAI_API_KEY")
     
     if not api_key:
@@ -471,7 +470,7 @@ def main():
     
     # Load the input data
     try:
-        with open("Data/input.json", 'r') as f:
+        with open("Data/ascii_input_data_merged_50.json", 'r') as f:
             input_data = json.load(f)
     except FileNotFoundError:
         print("Error: Input file 'Data/input.json' not found.")
@@ -481,9 +480,12 @@ def main():
     for item in input_data:
         file_name = item["file_name"]
         label = item["label"]
+        if len(label) < 1:
+            continue
         description = item["description"]
+        figure = item["ascii"]
         
-        program_path = pulse.process_image(file_name, label, description)
+        program_path = pulse.process_image(file_name, label, figure, description)
         
         print(f"\nGenerated program for {file_name}: {program_path}")
         print("To run the program, use: python", program_path)
