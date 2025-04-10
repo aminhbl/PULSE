@@ -8,6 +8,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from dotenv import load_dotenv
+from image_processing import image_to_llm_str
 
 # Constants
 LIBRARY_PATH = "library/library.json"
@@ -76,7 +77,7 @@ class PULSE:
             raise ValueError("OpenAI API key is required. Please provide it as an argument or set the OPENAI_API_KEY environment variable.")
         
         # Initialize LangChain LLM
-        self.llm =  ChatOpenAI(model="gpt-4o-mini", temperature=0)
+        self.llm =  ChatOpenAI(model="gpt-4o", temperature=0)
         
         # Initialize the prompt library
         self.library = PromptLibrary()
@@ -131,7 +132,7 @@ class PULSE:
             if line.startswith("Building Blocks:"):
                 building_blocks_line = line
             elif line.startswith("Program Instruction:"):
-                program_instruction_line = line
+                program_instruction_line = "\n".join(response.strip().split('\n')[response.strip().split('\n').index(line):])
         
         # Extract building blocks
         building_blocks = []
@@ -293,7 +294,8 @@ class PULSE:
         Instructions:
         {program_instruction}
         
-        You can use the following building blocks to create the image:
+        You can use the following building blocks to create the image.
+        The drwaing in your program, building blocks should have priority. For example, line has the highest priority.
         Building blocks available and the program for each block:
         {block_info}
         
@@ -482,8 +484,10 @@ def main():
         label = item["label"]
         if len(label) < 1:
             continue
+        if file_name != "img_16.png":
+            continue
         description = item["description"]
-        figure = item["ascii"]
+        figure = image_to_llm_str(os.path.join("Data/refined_logo_data/", file_name))
         
         program_path = pulse.process_image(file_name, label, figure, description)
         
