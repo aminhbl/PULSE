@@ -266,7 +266,7 @@ class PULSE:
             with open(program_path, 'w') as f:
                 f.write(program)
     
-    def stage_four(self, found_blocks: List[Dict], program_instruction: str, figure: str, output_filename: str) -> str:
+    def stage_four(self, found_blocks: List[Dict], program_instruction: str, output_filename: str) -> str:
         """
         Stage Four: Generate the final program that draws the original image.
         
@@ -310,14 +310,14 @@ class PULSE:
         
         # Create the LLMChain for Stage Four
         stage_four_prompt = PromptTemplate(
-            input_variables=["block_info", "program_instruction", "figure"],
+            input_variables=["block_info", "program_instruction"],
             template=stage_four_template
         )
         
         stage_four_chain = LLMChain(llm=self.llm, prompt=stage_four_prompt)
         
         # Execute the chain
-        response = stage_four_chain.run(block_info=block_info_str, program_instruction=program_instruction, figure=figure)
+        response = stage_four_chain.run(block_info=block_info_str, program_instruction=program_instruction)
         
         # Extract the program code
         program = ""
@@ -333,7 +333,7 @@ class PULSE:
         
         return program_path
     
-    def process_image(self, file_name: str, label: str, figure: str, description: str) -> str:
+    def process_image(self, file_name: str, label: str, description: str) -> str:
         """
         Process an image description and generate a Turtle program to draw it.
         
@@ -362,7 +362,7 @@ class PULSE:
             print("\nStage Two Result: All building blocks found in the library")
             # Stage Four: Generate the final program
             output_filename = os.path.splitext(file_name)[0]
-            program_path = self.stage_four(blocks, stage_one_result["program_instruction"], figure, output_filename)
+            program_path = self.stage_four(blocks, stage_one_result["program_instruction"], output_filename)
             print(f"\nStage Four Result: Program generated at {program_path}")
         else:
             if not stage_one_result["building_blocks"]:
@@ -450,7 +450,7 @@ class PULSE:
                 if all_found:
                     # Stage Four: Generate the final program
                     output_filename = os.path.splitext(file_name)[0]
-                    program_path = self.stage_four(blocks, stage_one_result["program_instruction"], figure, output_filename)
+                    program_path = self.stage_four(blocks, stage_one_result["program_instruction"], output_filename)
                     print(f"\nStage Four Result: Program generated at {program_path}")
                 else:
                     print("\nError: Still missing building blocks after Stage Three")
@@ -487,9 +487,8 @@ def main():
         if file_name != "img_16.png":
             continue
         description = item["description"]
-        figure = image_to_llm_str(os.path.join("Data/refined_logo_data/", file_name))
         
-        program_path = pulse.process_image(file_name, label, figure, description)
+        program_path = pulse.process_image(file_name, label, description)
         
         print(f"\nGenerated program for {file_name}: {program_path}")
         print("To run the program, use: python", program_path)
