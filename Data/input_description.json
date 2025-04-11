@@ -1,0 +1,557 @@
+[
+  {
+    "file_name": "img_0.png",
+    "description": "a single continuous line forming a square spiral that starts from the center and winds outward in a clockwise direction, ending with a vertical line extending downward from the top-left corner.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_1.png",
+    "description": "an abstract geometric figure composed of several overlapping straight lines forming a complex, angular shape. At the center, the lines intersect to create a dense arrangement of triangles and sharp angles, giving the appearance of a distorted or irregular five-pointed star. The lines are black, uniform in thickness, and extend outward in different directions, with some reaching beyond the central form. The overall figure has a dynamic, unbalanced look, as if the lines were drawn freely without symmetry, resulting in a layered and tangled visual effect.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_2.png",
+    "description": "six stacked squares, each larger than the one before, are nested inside one another, all starting from and sharing the same bottom-left corner. The squares expand outward in a clockwise direction, forming a staircase-like spiral with a geometric, layered pattern.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_3.png",
+    "description": "eight stacked squares, each larger than the one before, are nested inside one another, all starting from and sharing the same bottom-left corner. The squares expand outward in a clockwise direction, forming a staircase-like spiral with a geometric, layered pattern.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_4.png",
+    "description": "five stacked squares, each larger than the one before, are nested inside one another, all starting from and sharing the same bottom-left corner. The squares expand outward in a clockwise direction, forming a staircase-like spiral with a geometric, layered pattern.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_5.png",
+    "description": "seven stacked squares, each larger than the one before, are nested inside one another, all starting from and sharing the same bottom-left corner. The squares expand outward in a clockwise direction, forming a staircase-like spiral with a geometric, layered pattern.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_6.png",
+    "description": "five nested circles, each larger than the previous one. All circles share the same bottom point, but their centers are progressively higher, causing them to expand upward. This creates a layered, upward-growing pattern with a common base and varying radii.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_7.png",
+    "description": "four nested circles, each larger than the previous one. All circles share the same bottom point, but their centers are progressively higher, causing them to expand upward. This creates a layered, upward-growing pattern with a common base and varying radii.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_8.png",
+    "description": "six nested circles, each larger than the previous one. All circles share the same bottom point, but their centers are progressively higher, causing them to expand upward. This creates a layered, upward-growing pattern with a common base and varying radii.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_9.png",
+    "description": "three nested circles, each larger than the previous one. All circles share the same bottom point, but their centers are progressively higher, causing them to expand upward. This creates a layered, upward-growing pattern with a common base and varying radii.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_10.png",
+    "description": "a staircase-like pattern made of straight lines forming five steps, each turning at a right angle. The shape starts with a horizontal line and alternates between vertical and horizontal segments and ends with vertical line, creating an ascending zigzag path from bottom left to top right.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_11.png",
+    "description": "a staircase-like pattern made of straight lines forming eight steps, each turning at a right angle. The shape starts with a horizontal line and alternates between vertical and horizontal segments and ends with vertical line, creating an ascending zigzag path from bottom left to top right.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_12.png",
+    "description": "a staircase-like pattern made of straight lines forming three steps, each turning at a right angle. The shape starts with a horizontal line and alternates between vertical and horizontal segments and ends with vertical line, creating an ascending zigzag path from bottom left to top right.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_13.png",
+    "description": "a staircase-like pattern made of straight lines forming six steps, each turning at a right angle. The shape starts with a horizontal line and alternates between vertical and horizontal segments and ends with vertical line, creating an ascending zigzag path from bottom left to top right.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_14.png",
+    "description": "three-step ladder made of diagonal lines, forming a vertical zigzag pattern that goes from top to bottom. Each step slants alternately left and right, creating a shape that resembles a lightning bolt or a stylized, slanted staircase.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_15.png",
+    "description": "a regular pentagon on the left and a square on the right. Both shapes are outlined with bold black lines and are positioned side by side with some space between them, aligned horizontally.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_16.png",
+    "description": "on the left, a regular octagon with eight straight sides, and on the right, a semicircle facing left. Both shapes are outlined with bold black lines and are spaced apart, aligned horizontally",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_17.png",
+    "description": "a small circle on the left and a short horizontal line on the right. Both shapes are centered vertically and spaced apart, appearing as simple, bold black outlines.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_18.png",
+    "description": " a circle on the left and a regular nonagon on the right. Both are outlined with bold black lines and are horizontally aligned with some space between them.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_19.png",
+    "description": "a regular heptagon on the left and an equilateral triangle on the right. Both shapes are outlined with bold black lines and are positioned side by side, horizontally aligned near with some space between them. ",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_20.png",
+    "description": "a regular nonagon on the left and a smaller semicircle on the right. The semicircle is positioned slightly above the top right side of the nonagon and is facing left. Both shapes are outlined with bold black lines and spaced apart horizontally.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_21.png",
+    "description": "a small square on the left and a regular hexagon on the right. Both shapes are outlined with bold black lines and are horizontally aligned, with the hexagon positioned slightly higher and larger than the square.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_22.png",
+    "description": "a full circle on the left and a semicircle on the right. Both shapes are outlined with black lines and are horizontally aligned, with the semicircle facing left and there is a large space between them.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_23.png",
+    "description": "a square on the left and a triangle on the right. Both shapes are outlined with bold black lines and are horizontally aligned.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_24.png",
+    "description": "a regular heptagon on the left and a small circle on the right. Both shapes are outlined with bold black lines and are horizontally aligned, with the circle appearing smaller and positioned slightly lower than the heptagon.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_25.png",
+    "description": "two semicircles facing each other. The smaller semicircle is on the left and the larger one is on the right. Both are outlined with bold black lines and are horizontally aligned, with the left one slightly higher.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_26.png",
+    "description": "a bold black circle on the left and a short horizontal line on the right. Both shapes are horizontally aligned.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_27.png",
+    "description": "a small triangle on the left and a regular octagon on the right connected by a horizontal line joining their bases. All shapes are outlined with bold black lines and are aligned horizontally",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_28.png",
+    "description": "a pentagon on the left and a circle on the right, connected by a straight horizontal line joining their bases. All shapes are outlined with bold black lines and are aligned in a single row.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_29.png",
+    "description": "a long horizontal line that curves upward into a semicircle at the right end. The semicircle is open toward the left, forming a hook-like shape.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_30.png",
+    "description": "a small circle on the left and a small triangle on the right, connected by a horizontal line joining their bases. Both shapes are outlined with bold black lines and are horizontally aligned.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_31.png",
+    "description": "a circle on the left and a semicircle on the right, connected by a straight horizontal line running along the top. The line touches the top of the circle and curves downward at the right end into the open semicircle, which faces left.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_32.png",
+    "description": "two regular pentagons connected by a horizontal line joining their bases. Both shapes are outlined with bold black lines and are evenly spaced and aligned in a straight row.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_33.png",
+    "description": "a small circle on the left and a larger semicircle on the right, connected by a horizontal line joining their bases. The semicircle faces left, and all shapes are outlined with bold black lines and horizontally aligned.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_34.png",
+    "description": "two regular octagons connected by a horizontal line joining their bases. Both shapes are outlined with black lines and are symmetrically aligned on either side of the line.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_35.png",
+    "description": "a heptagon on the left and a smaller pentagon on the right, connected by a horizontal line joining their bases. Both shapes are outlined with black lines and are horizontally aligned.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_36.png",
+    "description": "a square on the left and a semicircle on the right, connected by a long horizontal line running above both shapes. The semicircle is open to the left, and all elements are outlined with black lines and horizontally aligned.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_37.png",
+    "description": "a small square on the left and a regular hexagon on the right, connected by a horizontal line joining their bases. Both shapes are outlined with black lines and are horizontally aligned.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_38.png",
+    "description": "circle on the left and a larger pentagon on the right, connected by a horizontal line joining their bases. Both shapes are outlined with bold black lines and are horizontally aligned.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_39.png",
+    "description": "four small triangles placed side by side, sharing a common base line. All the triangles are outlined with bold black lines, forming a horizontal row of peaks.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_40.png",
+    "description": "six identical semicircles arranged in a horizontal row, all facing left. Each semicircle is outlined with a bold black line, and they are evenly spaced, creating a repeating curved pattern.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_41.png",
+    "description": "five identical circles arranged in a horizontal row with interlocking together with overlapping edges. All circles are outlined with bold black lines, creating a chain-like appearance",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_42.png",
+    "description": "three identical semicircles arranged in a horizontal row, all facing left. Each semicircle is outlined with a bold black line and evenly spaced from the others.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_43.png",
+    "description": "four identical circles arranged in a horizontal row with interlocking together with overlapping edges. All circles are outlined with bold black lines, creating a chain-like appearance",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_44.png",
+    "description": "five hollow black circles arranged in a horizontal line with overlapping edges.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_45.png",
+    "description": "six hollow black circles arranged in a horizontal line with overlapping edges.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_46.png",
+    "description": "5 overlapping identical pentagons arranged in a horizontal row, each sharing a side with its neighbor.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_47.png",
+    "description": "six equilateral triangles arranged from left to right, each sharing a base edge with the next, each outlined with a bold black line.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_48.png",
+    "description": "three hollow black circles arranged in a horizontal line with overlapping edges.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_49.png",
+    "description": "three adjacent squares arranged horizontally from left to right. Each square shares one vertical side with the next, forming a straight horizontal row.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_50.png",
+    "description": "six identical, evenly spaced semicircles arranged horizontally from left to right, all facing to the left, each one is outlined with bold black lines.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_51.png",
+    "description": "six overlapping octagons arranged in a circular pattern, with each octagon partially covering its neighbors. The shapes are evenly spaced and interconnected, creating a complex, flower-like or webbed geometric design.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_52.png",
+    "description": "three pentagons, each connected by a single shared vertex (tip). The pentagons are arranged in a triangular formation, radiating outward from the common point where their tips meet.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_53.png",
+    "description": " six overlapping circles arranged in a radial pattern, with each circle intersecting at the center. The configuration resembles a flower, with the circles forming petal-like shapes around a central point.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_54.png",
+    "description": "three non-overlapping triangles, each sharing a common vertex at the center. The triangles are symmetrically arranged in a Y-shaped pattern, with one triangle pointing downward and the other two pointing diagonally upward to the left and right.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_55.png",
+    "description": "three squares, each connected at a single common vertex. The squares are arranged in a fan-like or pinwheel pattern, radiating outward from the shared corner point.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_56.png",
+    "description": "eight overlapping pentagons arranged in a circular, radial pattern, with their pointed tips facing outward from a shared central vertex. The pentagons are evenly spaced around the center, forming a symmetrical, flower-like design.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_57.png",
+    "description": "three identical semicircle arranged in a radial pattern around a central point. Each semicircle curves outward and is evenly spaced at 120-degree intervals, forming a pinwheel-like or rotating fan appearance.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_58.png",
+    "description": "eight identical semicircles (arc shapes) arranged in a circular, radial pattern around a central point. Each arc curves outward and is evenly spaced at 45-degree intervals, forming a swirling, pinwheel-like design that resembles a stylized spinning motion or spiral flower.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_59.png",
+    "description": "three connected hexagons arranged in a honeycomb-like pattern, resembling a small section of a beehive. Each hexagon shares an edge with another, forming a compact, interlocking structure typical of natural honeycomb designs.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_60.png",
+    "description": "seven straight lines radiating from a common central point, evenly spaced to form a starburst or asterisk-like shape. The lines are arranged at equal angles, giving the appearance of a simple geometric star with seven arms.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_61.png",
+    "description": "two overlapping squares, one upright and one rotated 45 degrees, sharing a common center. For each square, two diagonal lines connect the midpoints of opposite edges, forming an internal cross. The overall shape resembles an eight-pointed star with intersecting lines.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_62.png",
+    "description": "eight straight lines intersecting at a common center, forming a symmetrical asterisk-like shape. The lines are evenly spaced at 45-degree intervals, radiating outward in all directions.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_63.png",
+    "description": "six identical curved lines arranged radially around a central point, forming a pinwheel or flower-like shape. Each curve extends outward, starting straight from the center and bending smoothly at the end",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_64.png",
+    "description": "three squares connected to the ends of a Y-shaped structure, with each square placed at the tip of a straight line radiating from a central point.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_65.png",
+    "description": "eight pentagons, each connected to the tip of a straight line radiating from a central point. The lines are evenly spaced, forming a symmetrical starburst pattern with a pentagon at the end of each ray.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_66.png",
+    "description": "three circles connected to the ends of a Y-shaped structure, with each square placed at the tip of a straight line radiating from a central point.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_67.png",
+    "description": "six heptagons, each attached to the tip of a straight line radiating from a central point. The lines form a symmetrical star-like pattern, with the heptagons evenly spaced in a circular arrangement.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_68.png",
+    "description": "three small squares, each attached to the end of a line radiating from a central point in a Y-shaped formation. The squares are evenly spaced and slightly rotated, giving a dynamic, pinwheel-like appearance.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_69.png",
+    "description": " six straight lines radiating from a central point, each ending in a small circle. The lines are evenly spaced at 60-degree intervals, forming a symmetrical star-like or snowflake pattern with circles at the tips.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_70.png",
+    "description": "shows six heptagons arranged in a circular pattern, forming a symmetrical flower-like shape. Each pair of adjacent heptagons shares a common edge that points toward the center, and this shared base is connected to the central point. The heptagons slightly overlap, creating a tightly connected, radial design.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_71.png",
+    "description": "six circles arranged in a circular pattern around a central point. Each circle is connected to the center by a straight line extending to its edge. The lines are evenly spaced, forming a radial, flower-like or starburst design.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_72.png",
+    "description": "three heptagons positioned at the ends of a Y-shaped structure. Each heptagon is connected to the central point by a straight line, and they are evenly spaced at 120-degree angles",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_73.png",
+    "description": "eight triangles arranged in a circular pattern around a central point. Each triangle is connected to the center by a straight line that extends from the triangle's base midpoint to the central point. The triangles are evenly spaced, forming a symmetrical pattern.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_74.png",
+    "description": "eight triangles arranged radially around a central point. Each triangle is connected by a straight long line from the center to its tip (apex), with the bases facing outward. The triangles are evenly spaced, forming a symmetrical, starburst-like pattern.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_75.png",
+    "description": "three non-overlapping circles arranged in a triangular formation. They are evenly spaced, with one circle at the bottom and two near the top, resembling the vertices of an equilateral triangle.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_76.png",
+    "description": "six non-overlapping squares arranged in a circular or flower-like pattern around a central empty space. Each square is slightly rotated relative to the previous one",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_77.png",
+    "description": "eight heptagon arranged in a circular formation, resembling a flower-like pattern. Each pentagon is slightly rotated relative to the previous one, and they are evenly spaced around an empty central area",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_78.png",
+    "description": "eight identical circles arranged evenly in a circular formation around a central empty space. The circles do not overlap and are uniformly spaced.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_79.png",
+    "description": "five identical semicircles shapes arranged in a circular pattern around a central space. Each semicircle is slightly rotated compared to the previous one, and all face outward.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_80.png",
+    "description": "eight overlapping identical octagons arranged in a circular pattern around a central point. The inner part of the arrangement forms a small star-like shape.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_81.png",
+    "description": "three identical circles arranged in a triangular formation. They are evenly spaced, with two circles at the top and one centered below them, forming the shape of an upright triangle.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_82.png",
+    "description": "eight identical arc shapes arranged in a circular pattern around a central space. Each arc is slightly rotated relative to the previous one and faces outward, forming a symmetrical, flower-like or cloud-like design with a smooth, looping appearance.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_83.png",
+    "description": "eight identical pentagons arranged in a circular pattern, with each one slightly rotated relative to the previous. The pentagons are overlapped slightly.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_84.png",
+    "description": "eight small squares arranged in a circular pattern around a central space.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_85.png",
+    "description": "eight small hollow identical circles arranged evenly in a circular formation around a central space.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_86.png",
+    "description": "three non-overlapping heptagons arranged in a triangular formation. Each heptagon is identical in size and orientation, evenly spaced with one at the bottom and two positioned above",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_87.png",
+    "description": "a five-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a small circle at the end. The arms are evenly spaced around a central point, creating a symmetrical, star-like design.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_88.png",
+    "description": "a six-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a small square at the end. The squares are evenly spaced around a central point, with alternating rotations, forming a symmetrical design.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_89.png",
+    "description": "a three-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a small pentagon at the end. The pentagons are evenly spaced around a central point, forming a simple, symmetrical radial design.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_90.png",
+    "description": "a six-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a small triangle at the end. The triangles alternate in orientation (pointing up and down) and are evenly spaced around a central point, forming a symmetrical, star-like design.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_91.png",
+    "description": "an seven-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a semicircle at the end. The semicircles (arcs) are evenly spaced and slightly rotated around a central point.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_92.png",
+    "description": "an eight-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a small triangle at the end. The triangles are evenly spaced around a central point and are rotated progressively.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_93.png",
+    "description": "an eight-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a small circle at the end. The circles are evenly spaced around a central point",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_94.png",
+    "description": "a three-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a small circle at the end. The circles are evenly spaced around a central space, forming a triangular, radial arrangement.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_95.png",
+    "description": "a seven-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a small circle at the end. The circles are evenly spaced around a central point, creating a symmetrical, flower-like radial arrangement.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_96.png",
+    "description": "a three-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a small triangle at the end. Each short line and triangle is spaced 120 degrees apart, creating a balanced, symmetrical radial arrangement.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_97.png",
+    "description": "a seven-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a small square at the end. Each square is slightly rotated relative to the previous one, forming a symmetrical, radial design.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_98.png",
+    "description": "a six-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a small pentagon at the end. The arms are evenly spaced at 60-degree intervals around a central space and are slightly rotated relative to each other, forming a symmetrical, radial design.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_99.png",
+    "description": "five clusters of overlapping pentagons, arranged in a circular pattern. Each cluster contains two pentagons of the same size that slightly overlap. The amount and angle of overlap vary between clusters, gradually changing from one to the next.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_100.png",
+    "description": "an eight-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a small semicircle at the end. The semicircles are identical in shape and evenly spaced at 45-degree intervals.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_101.png",
+    "description": "a circular arrangement of eight clusters, each consisting of a pentagon overlapping with a circle. All clusters are identical in size and evenly spaced around a central point and each two adjacent clusters slightly overlap with one another.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_102.png",
+    "description": "six small circles arranged in a hexagonal ring, each touching its adjacent circles to form a compact cluster. Surrounding them are six evenly spaced semicircles, each one facing inward toward the cluster",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_103.png",
+    "description": "eight identical pentagons arranged in a circular formation, each one slightly overlapping with its neighboring pentagons. Also eight inward-facing arcs are placed, each one starting near the two outer vertices of the base of a pentagon",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_104.png",
+    "description": "six identical circles arranged in a circular formation, evenly spaced around a central point. Inside each circle is a triangle that has a line connecting its base to the circle’s edge.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_105.png",
+    "description": "three clusters, each consisting of one large arc and one small arc facing each other. These clusters are arranged in a circular pattern, evenly spaced around a central area.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_106.png",
+    "description": "eight identical clusters, each consisting of a large circle overlapping with a smaller circle. These clusters are arranged evenly around a ninth small circle at the center, with each outer cluster touching the central circle slightly.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_107.png",
+    "description": "five identical clusters, each made up of two touching circles. These clusters are arranged in a circular pattern.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_108.png",
+    "description": "three identical clusters, each consisting of a small circle and a square of the same size, overlapping such that the edge of the square cuts the circle exactly in half. The clusters are evenly spaced at 120-degree intervals, forming a rotating appearance.",
+    "label": "Compositional"
+  },
+  {
+    "file_name": "img_109.png",
+    "description": "five clusters, each consisting of a pentagon and a square of the same size overlapping each other. In each cluster, the square is positioned differently relative to the pentagon, with varying angles and overlap regions.",
+    "label": "Complex"
+  },
+  {
+    "file_name": "img_110.png",
+    "description": "six clusters, each consisting of a pentagon and a square of the same size overlapping each other, with each pentagon slightly touching its neighboring pentagons. In each cluster, the square is positioned differently relative to the pentagon, with varying angles and overlap regions.",
+    "label": "Complex"
+  }
+]

@@ -1,40 +1,39 @@
 import turtle
 
-# Function to draw an octagon
 def draw_octagon(t, size):
-    t.pensize(3)
-    t.color("black")
+    t.pendown()
     for _ in range(8):
         t.forward(size)
         t.left(45)
+    t.penup()
 
-# Function to draw a semi-circle
 def draw_semi_circle(t, radius):
+    t.pendown()
+    t.left(90)
+    t.circle(radius, 180)
+    t.penup()
+
+def main():
+    screen = turtle.Screen()
+    screen.setup(width=800, height=400)
+    screen.bgcolor("white")
+
+    t = turtle.Turtle()
+    t.speed(0)
     t.pensize(3)
     t.color("black")
-    t.setheading(90)  # Start facing upwards
-    t.circle(radius, 180)  # Draw a semi-circle
+    t.penup()
 
-# Set up the screen
-screen = turtle.Screen()
-screen.bgcolor("white")
+    # Draw octagon on the left side
+    t.goto(-200, 0)
+    draw_octagon(t, 100)
 
-# Create a turtle for drawing
-t = turtle.Turtle()
-t.speed(1)
+    # Draw semi-circle on the right side
+    t.goto(200, 50)
+    draw_semi_circle(t, 100)
 
-# Draw the octagon on the left side
-t.penup()
-t.goto(-150, 0)  # Position the turtle to the left
-t.pendown()
-draw_octagon(t, 50)
+    t.hideturtle()
+    screen.mainloop()
 
-# Draw the semi-circle on the right side
-t.penup()
-t.goto(100, 0)  # Position the turtle to the right
-t.pendown()
-draw_semi_circle(t, 50)
-
-# Hide the turtle and display the window
-t.hideturtle()
-screen.mainloop()
+if __name__ == "__main__":
+    main()

@@ -8,7 +8,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from dotenv import load_dotenv
-from image_processing import image_to_llm_str
+# from image_processing import image_to_llm_str
 
 # Constants
 LIBRARY_PATH = "library/library.json"
@@ -472,10 +472,10 @@ def main():
     
     # Load the input data
     try:
-        with open("Data/ascii_input_data_merged_50.json", 'r') as f:
+        with open("Data/input_description.json", 'r') as f:
             input_data = json.load(f)
     except FileNotFoundError:
-        print("Error: Input file 'Data/input.json' not found.")
+        print("Error: Input file 'Data/input_description.json' not found.")
         sys.exit(1)
     
     # Process each image in the input data
@@ -484,7 +484,7 @@ def main():
         label = item["label"]
         if len(label) < 1:
             continue
-        if file_name != "img_16.png":
+        if file_name != "img_14.png":
             continue
         description = item["description"]
         

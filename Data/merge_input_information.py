@@ -38,9 +38,9 @@ def update_json_from_csv(json_file, csv_file, output_file=None):
     print(f"Updated {updated_count} entries and saved to {output_path}")
 
 def main():
-    json_file = "Data/ascii_logo_input_data_50.json"     # Input JSON file
+    json_file = "Data/ascii_logo_input_data.json"     # Input JSON file
     csv_file = "Data/input_description.csv"           # CSV with label/description
-    output_file = "Data/ascii_input_data_merged_50.json"  # Optional: or overwrite json_file
+    output_file = "Data/ascii_input_data_merged.json"  # Optional: or overwrite json_file
 
     update_json_from_csv(json_file, csv_file, output_file)
 

@@ -2,7 +2,7 @@ import turtle
 
 # Set up the turtle
 t = turtle.Turtle()
-t.speed(1)  # Set the speed of the turtle
+t.speed(1)  # Slow down the turtle for better visualization
 t.penup()
 t.goto(-200, -200)  # Start at the bottom left corner
 t.pendown()

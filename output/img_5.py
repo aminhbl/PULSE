@@ -8,20 +8,16 @@ def draw_square(t, size):
 def main():
     screen = turtle.Screen()
     screen.bgcolor("white")
-    
+
     t = turtle.Turtle()
     t.color("black")
-    t.speed(0)  # Fastest drawing speed
+    t.speed(0)
 
-    # Initial size of the smallest square
-    size = 20
-    # Increment size for each subsequent square
-    increment = 20
+    size_increment = 20
+    initial_size = 20
 
-    # Draw six squares
-    for _ in range(6):
-        draw_square(t, size)
-        size += increment
+    for i in range(7):
+        draw_square(t, initial_size + i * size_increment)
 
     t.hideturtle()
     screen.mainloop()
