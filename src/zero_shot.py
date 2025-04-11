@@ -81,10 +81,10 @@ def main():
     """Main function to run the zero-shot turtle generation."""
     # Load the input data
     try:
-        with open("Data/ascii_input_data_merged_50.json", 'r') as f:
+        with open("Data/input_description.json", 'r') as f:
             input_data = json.load(f)
     except FileNotFoundError:
-        print("Error: Input file 'Data/ascii_input_data_merged_50.json' not found.")
+        print("Error: Input file 'Data/input_description.json' not found.")
         sys.exit(1)
     
     # Process each image in the input data
@@ -94,9 +94,6 @@ def main():
         
         # Skip items without a description
         if not description:
-            continue
-        
-        if file_name != "img_2.png":
             continue
         
         # Generate the output filename (remove file extension)

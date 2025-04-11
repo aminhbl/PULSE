@@ -6,17 +6,15 @@ def draw_spiral_squares():
     turtle.goto(0, 0)
     turtle.pendown()
     
-    side_length = 20  # Initial side length
-    increment = 20    # Increment for each subsequent square
-    
-    for _ in range(6):
+    side_length = 20
+    for i in range(7):
         for _ in range(4):
             turtle.forward(side_length)
             turtle.left(90)
-        side_length += increment
         turtle.penup()
-        turtle.goto(turtle.xcor() - increment / 2, turtle.ycor() - increment / 2)
+        turtle.goto(turtle.xcor() - 10, turtle.ycor() - 10)
         turtle.pendown()
+        side_length += 20
 
     turtle.done()
 

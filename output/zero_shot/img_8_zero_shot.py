@@ -8,13 +8,13 @@ def draw_nested_circles():
     pen.speed(0)
     pen.hideturtle()
 
-    # Set the initial position
+    # Starting position
     pen.penup()
     pen.goto(0, 0)
     pen.pendown()
 
     # Number of circles
-    num_circles = 5
+    num_circles = 6
     # Initial radius
     initial_radius = 20
     # Radius increment

@@ -7,7 +7,7 @@ screen.title("Octagon and Semicircle")
 # Create a turtle for drawing
 drawer = turtle.Turtle()
 drawer.pensize(3)  # Bold lines
-drawer.speed(1)  # Slow speed for drawing
+drawer.speed(1)
 
 # Function to draw a regular octagon
 def draw_octagon(size):
