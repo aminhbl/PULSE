@@ -6,8 +6,8 @@ screen.bgcolor("white")
 
 # Create a turtle for drawing
 drawer = turtle.Turtle()
-drawer.speed(1)
-drawer.pensize(3)  # Bold lines
+drawer.speed(0)
+drawer.pensize(3)
 
 # Function to draw a regular nonagon
 def draw_nonagon(size):
@@ -21,17 +21,18 @@ def draw_semicircle(radius):
 
 # Draw the nonagon
 drawer.penup()
-drawer.goto(-150, 0)  # Position the nonagon on the left
+drawer.goto(-150, 0)
 drawer.pendown()
+drawer.color("black")
 draw_nonagon(100)
 
 # Draw the semicircle
 drawer.penup()
-drawer.goto(50, 100)  # Position the semicircle slightly above the nonagon
-drawer.setheading(180)  # Face the semicircle to the left
+drawer.goto(50, 100)  # Position slightly above the top right side of the nonagon
+drawer.setheading(-45)  # Rotate to the right
 drawer.pendown()
 draw_semicircle(50)
 
-# Hide the turtle and display the window
+# Hide the turtle and finish
 drawer.hideturtle()
 screen.mainloop()

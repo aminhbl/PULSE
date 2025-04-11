@@ -13,27 +13,26 @@ def draw_semi_circle(t, radius):
     t.pendown()
     t.pensize(3)
     t.pencolor("black")
-    t.setheading(90)  # Start from the top of the semi-circle
-    t.circle(radius, 180)  # Draw a semi-circle
+    t.circle(radius, 180)
     t.penup()
 
 def main():
     screen = turtle.Screen()
+    screen.setup(width=800, height=600)
     screen.bgcolor("white")
 
     t = turtle.Turtle()
     t.speed(0)
     t.penup()
 
-    # Draw nonagon
-    nonagon_side_length = 100
-    t.goto(-150, 0)  # Position turtle for nonagon
-    draw_nonagon(t, nonagon_side_length)
+    # Draw nonagon on the left side
+    t.goto(-200, 0)
+    draw_nonagon(t, 100)
 
-    # Draw semi-circle
-    semi_circle_radius = 50
-    t.goto(100, 50)  # Position turtle for semi-circle
-    draw_semi_circle(t, semi_circle_radius)
+    # Draw semi-circle on the right side, slightly above the nonagon
+    t.goto(100, 100)
+    t.setheading(-45)  # Rotate 45 degrees to the right
+    draw_semi_circle(t, 50)
 
     t.hideturtle()
     screen.mainloop()

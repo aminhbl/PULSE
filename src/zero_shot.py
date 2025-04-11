@@ -96,6 +96,9 @@ def main():
         if not description:
             continue
         
+        if file_name != "img_20.png":
+            continue
+        
         # Generate the output filename (remove file extension)
         output_filename = os.path.splitext(file_name)[0] + '_zero_shot'
         
