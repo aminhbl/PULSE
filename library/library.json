@@ -39,6 +39,11 @@
       "tag": "Spiral",
       "tldr": "The program draws a square spiral starting from the center, winding outward clockwise, and ends with a vertical line from the top-left corner.",
       "prompt": "Generate a Python Turtle program that draws: To create the described image, start by drawing a single continuous line from the center of your canvas. Begin forming a square spiral by drawing a series of connected straight lines that gradually increase in length, each turning 90 degrees clockwise from the previous line. Continue this pattern, ensuring that the spiral expands outward from the center. Once the spiral reaches the top-left corner of the canvas, extend the final line vertically downward to complete the image."
+    },
+    {
+      "tag": "nonagon",
+      "tldr": "This program uses Python's Turtle graphics to draw a nonagon with a black border on a white background.",
+      "prompt": "Generate a Python Turtle program that draws a nonagon. This program uses Python's Turtle graphics to draw a nonagon with a black border on a white background. import turtle\n\ndef draw_nonagon(side_length):\n    # Set up the turtle\n    turtle.bgcolor(\"white\")\n    turtle.color(\"black\")\n    turtle.speed(1)  # Slow speed for drawing\n    turtle.penup()\n    turtle.goto(-side_length / 2, 0)  # Start at the left edge of the nonagon\n    turtle.pendown()\n\n    # Draw a nonagon\n    for _ in range(9):\n        turtle.forward(side_length)\n        turtle.left(40)  # 360/9 = 40 degrees\n\n    # Hide the turtle and finish\n    turtle.hideturtle()\n    turtle.done()\n\n# Set the side length for the nonagon\nside_length = 100\n\n# Call the function to draw the nonagon\ndraw_nonagon(side_length)"
     }
   ]
 }

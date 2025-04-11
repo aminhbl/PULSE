@@ -485,7 +485,7 @@ def main():
         label = item["label"]
         if len(label) < 1:
             continue
-        if file_name != "img_0.png":
+        if file_name != "img_31.png":
             continue
         description = item["description"]
         
