@@ -71,12 +71,12 @@
   },
   {
     "file_name": "img_14.png",
-    "description": "three-step ladder made of diagonal lines, forming a vertical zigzag pattern that goes from top to bottom. Each step slants alternately left and right, creating a shape that resembles a lightning bolt or a stylized, slanted staircase.",
+    "description": "four-step ladder made of diagonal lines, forming a vertical zigzag pattern that goes from top to bottom. Each step slants alternately right and left, creating a shape that resembles a lightning bolt or a stylized, slanted staircase.",
     "label": "Complex"
   },
   {
     "file_name": "img_15.png",
-    "description": "a regular pentagon on the left and a square on the right. Both shapes are outlined with bold black lines and are positioned side by side with some space between them, aligned horizontally.",
+    "description": "A regular pentagon on the left with its flat base side oriented horizontally at the bottom, and a square on the right. Both shapes are outlined with bold black lines and are positioned side by side with some space between them, aligned horizontally.",
     "label": "Compositional"
   },
   {
@@ -91,12 +91,12 @@
   },
   {
     "file_name": "img_18.png",
-    "description": " a circle on the left and a regular nonagon on the right. Both are outlined with bold black lines and are horizontally aligned with some space between them.",
+    "description": "a regular circle on the left and a regular nonagon which is a little biger than the circle on the right. Both are outlined with bold black lines and are horizontally aligned with some space between them.",
     "label": "Compositional"
   },
   {
     "file_name": "img_19.png",
-    "description": "a regular heptagon on the left and an equilateral triangle on the right. Both shapes are outlined with bold black lines and are positioned side by side, horizontally aligned near with some space between them. ",
+    "description": "a regular heptagon on the left and a same size equilateral triangle on the right. Both shapes are outlined with bold black lines and are positioned side by side, horizontally aligned near with some space between them.",
     "label": "Compositional"
   },
   {
@@ -106,7 +106,7 @@
   },
   {
     "file_name": "img_21.png",
-    "description": "a small square on the left and a regular hexagon on the right. Both shapes are outlined with bold black lines and are horizontally aligned, with the hexagon positioned slightly higher and larger than the square.",
+    "description": "a small square on the left and a regular hexagon on the right. Both shapes are outlined with bold black lines and are horizontally aligned.",
     "label": "Compositional"
   },
   {
@@ -121,7 +121,7 @@
   },
   {
     "file_name": "img_24.png",
-    "description": "a regular heptagon on the left and a small circle on the right. Both shapes are outlined with bold black lines and are horizontally aligned, with the circle appearing smaller and positioned slightly lower than the heptagon.",
+    "description": "A small heptagon on the left and a small circle on the right, both with a white background and outlined with bold black lines. The shapes are horizontally aligned, with the circle appearing smaller and a large space between them.",
     "label": "Compositional"
   },
   {
@@ -131,7 +131,7 @@
   },
   {
     "file_name": "img_26.png",
-    "description": "a bold black circle on the left and a short horizontal line on the right. Both shapes are horizontally aligned.",
+    "description": "a circle on the left and a short horizontal line on the right. Both shapes are outlined with bold black lines and horizontally aligned.",
     "label": "Compositional"
   },
   {
