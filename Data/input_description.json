@@ -376,12 +376,12 @@
   },
   {
     "file_name": "img_75.png",
-    "description": "three non-overlapping circles arranged in a triangular formation. They are evenly spaced, with one circle at the bottom and two near the top, resembling the vertices of an equilateral triangle.",
+    "description": "three non-overlapping circles arranged in a triangular formation with large space between each two of them. They are evenly spaced, with one circle at the bottom and two near the top, resembling the vertices of an equilateral triangle.",
     "label": "Compositional"
   },
   {
     "file_name": "img_76.png",
-    "description": "six non-overlapping squares arranged in a circular or flower-like pattern around a central empty space. Each square is slightly rotated relative to the previous one",
+    "description": "six non-overlapping squares arranged in a circular or flower-like pattern around a central empty space. Each square is slightly rotated relative to the previous one and there is are evenly spaced.",
     "label": "Compositional"
   },
   {
@@ -401,12 +401,12 @@
   },
   {
     "file_name": "img_80.png",
-    "description": "eight overlapping identical octagons arranged in a circular pattern around a central point. The inner part of the arrangement forms a small star-like shape.",
+    "description": "eight identical octagons arranged in a circular pattern around a central point. Each octagon overlaps with its two near octagon very little. The inner part of the arrangement forms a small star-like shape.",
     "label": "Complex"
   },
   {
     "file_name": "img_81.png",
-    "description": "three identical circles arranged in a triangular formation. They are evenly spaced, with two circles at the top and one centered below them, forming the shape of an upright triangle.",
+    "description": "three non-overlapping circles arranged in a triangular formation with large space between each two of them. They are evenly spaced, with one circle at the bottom and two near the top, resembling the vertices of an equilateral triangle.",
     "label": "Compositional"
   },
   {
@@ -416,27 +416,27 @@
   },
   {
     "file_name": "img_83.png",
-    "description": "eight identical pentagons arranged in a circular pattern, with each one slightly rotated relative to the previous. The pentagons are overlapped slightly.",
+    "description": "Eight identical pentagons arranged in a circular pattern, each slightly rotated relative to the one before it. The pentagons overlap slightly, creating a large open space at the center.",
     "label": "Compositional"
   },
   {
     "file_name": "img_84.png",
-    "description": "eight small squares arranged in a circular pattern around a central space.",
+    "description": "Eight non-overlapping small squares arranged in a circular pattern around a central big space, each slightly rotated relative to the one before.",
     "label": "Compositional"
   },
   {
     "file_name": "img_85.png",
-    "description": "eight small hollow identical circles arranged evenly in a circular formation around a central space.",
+    "description": "seven small hollow identical circles arranged evenly in a circular formation.",
     "label": "Compositional"
   },
   {
     "file_name": "img_86.png",
-    "description": "three non-overlapping heptagons arranged in a triangular formation. Each heptagon is identical in size and orientation, evenly spaced with one at the bottom and two positioned above",
+    "description": "three non-overlapping heptagons arranged in a triangular formation with large space between each two of them. They are evenly spaced, with one heptagon at the bottom and two near the top, resembling the vertices of an equilateral triangle.",
     "label": "Compositional"
   },
   {
     "file_name": "img_87.png",
-    "description": "a five-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a small circle at the end. The arms are evenly spaced around a central point, creating a symmetrical, star-like design.",
+    "description": "A five-armed snowflake pattern centered around a point. Each arm consists of one and only one short line, positioned between two small gaps and not connected to the center. A single small circle sits at the tip of each arm. The arms are evenly spaced, forming a symmetrical, star-like design.",
     "label": "Compositional"
   },
   {

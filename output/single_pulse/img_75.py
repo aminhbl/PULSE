@@ -1,48 +1,41 @@
 import turtle
 
 # Function to draw a circle
-def draw_circle(t, radius):
-    t.penup()
-    t.forward(radius)
-    t.left(90)
-    t.pendown()
-    t.circle(radius)
-    t.penup()
-    t.right(90)
-    t.backward(radius)
-    t.pendown()
+def draw_circle(x, y, radius):
+    turtle.penup()
+    turtle.goto(x, y - radius)
+    turtle.pendown()
+    turtle.circle(radius)
 
-# Set up the screen
-screen = turtle.Screen()
-screen.bgcolor("white")
-
-# Create a turtle for drawing
-t = turtle.Turtle()
-t.color("black")
-t.speed(1)
+# Set up the turtle
+turtle.speed(0)
+turtle.hideturtle()
 
 # Define the radius of the circles
 radius = 50
 
-# Draw the bottom circle
-draw_circle(t, radius)
+# Calculate the positions for the circles
+# The height of an equilateral triangle with side length s is (sqrt(3)/2) * s
+# We want the centers of the circles to form an equilateral triangle
+side_length = 3 * radius  # Arbitrary choice to ensure non-overlapping
+height = (3**0.5 / 2) * side_length
 
-# Move to the position for the top-left circle
-t.penup()
-t.goto(-radius, radius * 1.732)  # 1.732 is approximately sqrt(3)
-t.pendown()
+# Bottom circle
+bottom_x = 0
+bottom_y = -height / 3
 
-# Draw the top-left circle
-draw_circle(t, radius)
+# Top left circle
+top_left_x = -side_length / 2
+top_left_y = height * 2 / 3
 
-# Move to the position for the top-right circle
-t.penup()
-t.goto(radius, radius * 1.732)
-t.pendown()
+# Top right circle
+top_right_x = side_length / 2
+top_right_y = height * 2 / 3
 
-# Draw the top-right circle
-draw_circle(t, radius)
+# Draw the circles
+draw_circle(bottom_x, bottom_y, radius)
+draw_circle(top_left_x, top_left_y, radius)
+draw_circle(top_right_x, top_right_y, radius)
 
-# Hide the turtle and display the window
-t.hideturtle()
-screen.mainloop()
+# Finish
+turtle.done()
