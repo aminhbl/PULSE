@@ -12,7 +12,7 @@ from image_processing import image_to_llm_str
 
 # Constants
 LIBRARY_PATH = "library/library.json"
-OUTPUT_DIR = "output"
+OUTPUT_DIR = "output/single_pulse"
 
 # Ensure output directory exists
 os.makedirs(OUTPUT_DIR, exist_ok=True)

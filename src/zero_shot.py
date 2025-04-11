@@ -9,7 +9,7 @@ from langchain.chains import LLMChain
 from dotenv import load_dotenv
 
 # Constants
-OUTPUT_DIR = "output"
+OUTPUT_DIR = "output/zero_shot"
 
 # Ensure output directory exists
 os.makedirs(OUTPUT_DIR, exist_ok=True)
