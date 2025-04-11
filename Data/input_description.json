@@ -436,27 +436,27 @@
   },
   {
     "file_name": "img_87.png",
-    "description": "A five-armed snowflake pattern centered around a point. Each arm consists of one and only one short line, positioned between two small gaps and not connected to the center. A single small circle sits at the tip of each arm. The arms are evenly spaced, forming a symmetrical, star-like design.",
+    "description": "A five-armed snowflake pattern, where each arm consists of a line followed by a small circle at the end, with a gap between them. The lines radiate outward from around a central small space but do not touch the center. The arms are evenly spaced, forming a symmetrical, star-like design.",
     "label": "Compositional"
   },
   {
     "file_name": "img_88.png",
-    "description": "a six-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a small square at the end. The squares are evenly spaced around a central point, with alternating rotations, forming a symmetrical design.",
+    "description": "A six-armed snowflake pattern, where each arm consists of a line followed by a small square at the end, with a gap between them. The lines radiate outward from around a central small space but do not touch the center. The arms are evenly spaced, forming a symmetrical, star-like design.",
     "label": "Compositional"
   },
   {
     "file_name": "img_89.png",
-    "description": "a three-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a small pentagon at the end. The pentagons are evenly spaced around a central point, forming a simple, symmetrical radial design.",
+    "description": "A three-armed snowflake pattern, where each arm consists of a line followed by a small pentagon at the end, with a gap between them. The lines radiate outward from around a central small space but do not touch the center. The arms are evenly spaced, forming a symmetrical, star-like design.",
     "label": "Compositional"
   },
   {
     "file_name": "img_90.png",
-    "description": "a six-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a small triangle at the end. The triangles alternate in orientation (pointing up and down) and are evenly spaced around a central point, forming a symmetrical, star-like design.",
+    "description": "A six-armed snowflake pattern, where each arm consists of a line followed by a small triangle at the end, with a gap between them. The lines radiate outward from around a central small space but do not touch the center. The triangles alternate in orientation (pointing up and down), and the arms are evenly spaced, forming a symmetrical, star-like design.",
     "label": "Compositional"
   },
   {
     "file_name": "img_91.png",
-    "description": "an seven-sided snowflake pattern, where each arm consists of a short space, a short line, another short space, and a semicircle at the end. The semicircles (arcs) are evenly spaced and slightly rotated around a central point.",
+    "description": "A seven-armed snowflake pattern, where each arm consists of a line followed by a small semicircle at the end, with a gap between them. The lines radiate outward from around a central small space but do not touch the center. The arms are evenly spaced, forming a symmetrical, star-like design.",
     "label": "Compositional"
   },
   {

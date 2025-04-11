@@ -1,49 +1,46 @@
 import turtle
+import math
 
-# Set up the turtle
+# Set up the screen
+screen = turtle.Screen()
+screen.bgcolor("white")
+
+# Create a turtle for drawing
 t = turtle.Turtle()
 t.speed(0)  # Fastest speed
-turtle.bgcolor("white")
-t.color("black")
+t.penup()
+
+# Constants
+num_lines = 5
+line_length = 100
+circle_radius = 10
+gap_from_center = 20
+gap_to_circle = 10
 
 # Function to draw a line
-def draw_line(length):
+def draw_line(angle):
     t.penup()
-    t.forward(20)  # Small gap from the center
+    t.goto(0, 0)
+    t.setheading(angle)
+    t.forward(gap_from_center)
     t.pendown()
-    t.forward(length)
+    t.forward(line_length - gap_to_circle)
     t.penup()
-    t.backward(length + 20)  # Return to the center
 
 # Function to draw a circle at the end of a line
-def draw_circle(radius):
-    t.penup()
-    t.forward(radius)
+def draw_circle(angle):
+    t.setheading(angle)
+    t.forward(line_length)
     t.pendown()
-    t.circle(radius)
+    t.circle(circle_radius)
     t.penup()
-    t.backward(radius)
-
-# Main function to draw the snowflake
-def draw_snowflake():
-    num_arms = 5
-    angle = 360 / num_arms
-    line_length = 100
-    circle_radius = 10
-
-    for _ in range(num_arms):
-        draw_line(line_length)
-        draw_circle(circle_radius)
-        t.right(angle)
-
-# Move the turtle to the starting position
-t.penup()
-t.goto(0, 0)
-t.pendown()
 
 # Draw the snowflake
-draw_snowflake()
+for i in range(num_lines):
+    angle = i * (360 / num_lines)
+    draw_line(angle)
+    draw_circle(angle)
 
-# Hide the turtle and display the window
+# Hide the turtle and display the result
 t.hideturtle()
-turtle.done()
+screen.mainloop()
