@@ -13,18 +13,13 @@ def main():
     t.color("black")
     t.speed(0)
 
-    # Starting size and position
+    # Starting size of the smallest square
     size = 20
-    x, y = 0, 0
 
     # Draw 6 squares, each larger than the previous
     for i in range(6):
-        t.penup()
-        t.goto(x, y)
-        t.pendown()
         draw_square(t, size)
-        size += 20  # Increase size for the next square
-        y -= 20    # Move the starting point down for the next square
+        size += 20  # Increase the size for the next square
 
     t.hideturtle()
     screen.mainloop()

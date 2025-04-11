@@ -77,7 +77,7 @@ class PULSE:
             raise ValueError("OpenAI API key is required. Please provide it as an argument or set the OPENAI_API_KEY environment variable.")
         
         # Initialize LangChain LLM
-        self.llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+        self.llm = ChatOpenAI(model="gpt-4o", temperature=0)
         
         # Initialize the prompt library
         self.library = PromptLibrary()
@@ -132,7 +132,7 @@ class PULSE:
             if line.startswith("Building Blocks:"):
                 building_blocks_line = line
             elif line.startswith("Program Instruction:"):
-                program_instruction_line = line
+                program_instruction_line = "\n".join(response.strip().split('\n')[response.strip().split('\n').index(line):])
         
         # Extract building blocks
         building_blocks = []
@@ -266,14 +266,13 @@ class PULSE:
             with open(program_path, 'w') as f:
                 f.write(program)
     
-    def stage_four(self, found_blocks: List[Dict], program_instruction: str, figure: str, output_filename: str) -> List[str]:
+    def stage_four(self, found_blocks: List[Dict], program_instruction: str, output_filename: str) -> List[str]:
         """
         Stage Four: Generate 3 different programs that draw the original image using different temperatures.
         
         Args:
             found_blocks: A list of building blocks found in the library
             program_instruction: The program instruction from Stage One
-            figure: The figure representation
             output_filename: The base name of the output file
             
         Returns:
@@ -310,7 +309,7 @@ class PULSE:
         
         # Create the LLMChain for Stage Four
         stage_four_prompt = PromptTemplate(
-            input_variables=["block_info", "program_instruction", "figure"],
+            input_variables=["block_info", "program_instruction"],
             template=stage_four_template
         )
         
@@ -320,14 +319,14 @@ class PULSE:
         for i in range(3):
             # Create a new LLM with a different temperature for each iteration
             # Temperature ranges from 0.1 to 1.0
-            temperature = (i + 1) * 0.1
-            llm_with_temp = ChatOpenAI(model="gpt-4o-mini", temperature=temperature)
+            temperature = (i) * 0.1
+            llm_with_temp = ChatOpenAI(model="gpt-4o", temperature=temperature)
             
             # Create a new chain with the temperature-specific LLM
             stage_four_chain = LLMChain(llm=llm_with_temp, prompt=stage_four_prompt)
             
             # Execute the chain
-            response = stage_four_chain.run(block_info=block_info_str, program_instruction=program_instruction, figure=figure)
+            response = stage_four_chain.run(block_info=block_info_str, program_instruction=program_instruction)
             
             # Extract the program code
             program = ""
@@ -347,7 +346,7 @@ class PULSE:
         
         return program_paths
     
-    def process_image(self, file_name: str, label: str, figure: str, description: str) -> List[str]:
+    def process_image(self, file_name: str, label: str, description: str) -> List[str]:
         """
         Process an image description and generate a Turtle program to draw it.
         
@@ -376,7 +375,7 @@ class PULSE:
             print("\nStage Two Result: All building blocks found in the library")
             # Stage Four: Generate 3 different programs
             output_filename = os.path.splitext(file_name)[0]
-            program_paths = self.stage_four(blocks, stage_one_result["program_instruction"], figure, output_filename)
+            program_paths = self.stage_four(blocks, stage_one_result["program_instruction"], output_filename)
             print(f"\nStage Four Result: Generated 3 program variants")
             for i, path in enumerate(program_paths):
                 print(f"  Variant {i+1}: {path}")
@@ -435,8 +434,8 @@ class PULSE:
                 # Generate 3 different programs with varying temperatures
                 for i in range(3):
                     # Create a new LLM with a different temperature for each iteration
-                    temperature = (i + 1) * 0.1
-                    llm_with_temp = ChatOpenAI(model="gpt-4o-mini", temperature=temperature)
+                    temperature = (i) * 0.1
+                    llm_with_temp = ChatOpenAI(model="gpt-4o", temperature=temperature)
                     
                     # Create a new chain with the temperature-specific LLM
                     variant_chain = LLMChain(llm=llm_with_temp, prompt=complex_prompt)
@@ -475,7 +474,7 @@ class PULSE:
                 if all_found:
                     # Stage Four: Generate 3 different programs
                     output_filename = os.path.splitext(file_name)[0]
-                    program_paths = self.stage_four(blocks, stage_one_result["program_instruction"], figure, output_filename)
+                    program_paths = self.stage_four(blocks, stage_one_result["program_instruction"], output_filename)
                     print(f"\nStage Four Result: Generated 3 program variants")
                     for i, path in enumerate(program_paths):
                         print(f"  Variant {i+1}: {path}")
@@ -514,11 +513,11 @@ def main():
         label = item["label"]
         if len(label) < 1:
             continue
+        if file_name != "img_2.png":
+            continue
         description = item["description"]
         
-        figure = image_to_llm_str(os.path.join('Data/refined_logo_data/', file_name))
-        
-        program_paths = pulse.process_image(file_name, label, figure, description)
+        program_paths = pulse.process_image(file_name, label, description)
         
         if program_paths:
             print(f"\nGenerated {len(program_paths)} program variants for {file_name}:")
