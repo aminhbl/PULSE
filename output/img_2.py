@@ -1,33 +1,29 @@
 import turtle
 
-def draw_square(t, size):
-    for _ in range(4):
-        t.forward(size)
-        t.left(90)
-
-def main():
+def draw_spiral_squares():
     screen = turtle.Screen()
     screen.bgcolor("white")
 
-    t = turtle.Turtle()
-    t.color("black")
-    t.speed(0)
-    
-    # Starting size of the smallest square
+    pen = turtle.Turtle()
+    pen.speed(0)
+    pen.penup()
+    pen.goto(-200, -200)
+    pen.pendown()
+
     size = 20
-    # Number of squares
-    num_squares = 6
-    # Increment size for each subsequent square
-    increment = 20
+    for _ in range(6):
+        for _ in range(4):
+            pen.forward(size)
+            pen.left(90)
+        pen.penup()
+        pen.forward(size)
+        pen.right(90)
+        pen.forward(size)
+        pen.left(90)
+        pen.pendown()
+        size += 20
 
-    for i in range(num_squares):
-        draw_square(t, size + i * increment)
-        t.penup()
-        t.goto(0, 0)
-        t.pendown()
-
-    t.hideturtle()
+    pen.hideturtle()
     screen.mainloop()
 
-if __name__ == "__main__":
-    main()
+draw_spiral_squares()
