@@ -100,7 +100,7 @@ def main():
             continue
         
         # Generate the output filename (remove file extension)
-        output_filename = os.path.splitext(file_name)[0]
+        output_filename = os.path.splitext(file_name)[0] + '_zero_shot'
         
         # Generate the turtle program
         program_path = zero_shot_turtle_generation(description, output_filename)
