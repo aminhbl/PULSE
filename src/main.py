@@ -295,7 +295,6 @@ class PULSE:
         {program_instruction}
         
         You can use the following building blocks to create the image.
-        The drwaing in your program, building blocks should have priority. For example, line has the highest priority.
         Building blocks available and the program for each block:
         {block_info}
         
@@ -417,6 +416,8 @@ class PULSE:
                 for i, line in enumerate(lines):
                     if line.startswith("tldr:"):
                         tldr = line.replace("tldr:", "").strip()
+                    elif line.startswith("tag:"):
+                        complex_tag = line.replace("tag:", "").strip()
                     elif line.startswith("```python"):
                         # Extract the program code
                         program_lines = []
@@ -484,7 +485,7 @@ def main():
         label = item["label"]
         if len(label) < 1:
             continue
-        if file_name != "img_14.png":
+        if file_name != "img_97.png":
             continue
         description = item["description"]
         
