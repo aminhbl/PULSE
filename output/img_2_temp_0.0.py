@@ -11,19 +11,16 @@ def main():
     
     t = turtle.Turtle()
     t.color("black")
-    t.speed(0)  # Fastest drawing speed
-
-    # Initial size of the smallest square
+    t.speed(0)
+    
+    # Starting size of the smallest square
     size = 20
-    # Increment size for each subsequent square
-    increment = 20
-
-    # Draw six squares
-    for _ in range(6):
+    
+    # Draw 6 squares, each larger than the previous
+    for i in range(6):
         draw_square(t, size)
-        size += 20  # Increase size for the next square
-        y -= 20    # Move the starting point down for the next square
-
+        size += 20  # Increase the size for the next square
+    
     t.hideturtle()
     screen.mainloop()
 

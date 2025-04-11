@@ -8,11 +8,11 @@ from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from dotenv import load_dotenv
-# from image_processing import image_to_llm_str
+from image_processing import image_to_llm_str
 
 # Constants
 LIBRARY_PATH = "library/library.json"
-OUTPUT_DIR = "output/single_pulse"
+OUTPUT_DIR = "output/multiple_pulse"
 
 # Ensure output directory exists
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -77,7 +77,7 @@ class PULSE:
             raise ValueError("OpenAI API key is required. Please provide it as an argument or set the OPENAI_API_KEY environment variable.")
         
         # Initialize LangChain LLM
-        self.llm =  ChatOpenAI(model="gpt-4o", temperature=0)
+        self.llm = ChatOpenAI(model="gpt-4o", temperature=0)
         
         # Initialize the prompt library
         self.library = PromptLibrary()
@@ -266,17 +266,17 @@ class PULSE:
             with open(program_path, 'w') as f:
                 f.write(program)
     
-    def stage_four(self, found_blocks: List[Dict], program_instruction: str, output_filename: str) -> str:
+    def stage_four(self, found_blocks: List[Dict], program_instruction: str, output_filename: str) -> List[str]:
         """
-        Stage Four: Generate the final program that draws the original image.
+        Stage Four: Generate 3 different programs that draw the original image using different temperatures.
         
         Args:
             found_blocks: A list of building blocks found in the library
             program_instruction: The program instruction from Stage One
-            output_filename: The name of the output file
+            output_filename: The base name of the output file
             
         Returns:
-            The path to the generated program
+            A list of paths to the generated programs
         """
         # Create a list of building block tags and their prompts
         block_info = []
@@ -294,8 +294,7 @@ class PULSE:
         Instructions:
         {program_instruction}
         
-        You can use the following building blocks to create the image.
-        The drwaing in your program, building blocks should have priority. For example, line has the highest priority.
+        You can use the following building blocks to create the image:
         Building blocks available and the program for each block:
         {block_info}
         
@@ -314,26 +313,40 @@ class PULSE:
             template=stage_four_template
         )
         
-        stage_four_chain = LLMChain(llm=self.llm, prompt=stage_four_prompt)
+        program_paths = []
         
-        # Execute the chain
-        response = stage_four_chain.run(block_info=block_info_str, program_instruction=program_instruction)
+        # Generate 3 different programs with varying temperatures
+        for i in range(3):
+            # Create a new LLM with a different temperature for each iteration
+            # Temperature ranges from 0.1 to 1.0
+            temperature = (i) * 0.1
+            llm_with_temp = ChatOpenAI(model="gpt-4o", temperature=temperature)
+            
+            # Create a new chain with the temperature-specific LLM
+            stage_four_chain = LLMChain(llm=llm_with_temp, prompt=stage_four_prompt)
+            
+            # Execute the chain
+            response = stage_four_chain.run(block_info=block_info_str, program_instruction=program_instruction)
+            
+            # Extract the program code
+            program = ""
+            if "```python" in response:
+                program = response.split("```python")[1].split("```")[0].strip()
+            else:
+                program = response.strip()
+            
+            # Save the program to a file with a unique name based on temperature
+            variant_filename = f"{output_filename}_temp_{temperature:.1f}"
+            program_path = f"{OUTPUT_DIR}/{variant_filename}.py"
+            with open(program_path, 'w') as f:
+                f.write(program)
+            
+            program_paths.append(program_path)
+            print(f"Generated variant {i+1}/3 with temperature {temperature:.1f}")
         
-        # Extract the program code
-        program = ""
-        if "```python" in response:
-            program = response.split("```python")[1].split("```")[0].strip()
-        else:
-            program = response.strip()
-        
-        # Save the program to a file
-        program_path = f"{OUTPUT_DIR}/{output_filename}.py"
-        with open(program_path, 'w') as f:
-            f.write(program)
-        
-        return program_path
+        return program_paths
     
-    def process_image(self, file_name: str, label: str, description: str) -> str:
+    def process_image(self, file_name: str, label: str, description: str) -> List[str]:
         """
         Process an image description and generate a Turtle program to draw it.
         
@@ -360,15 +373,19 @@ class PULSE:
         
         if all_found:
             print("\nStage Two Result: All building blocks found in the library")
-            # Stage Four: Generate the final program
+            # Stage Four: Generate 3 different programs
             output_filename = os.path.splitext(file_name)[0]
-            program_path = self.stage_four(blocks, stage_one_result["program_instruction"], output_filename)
-            print(f"\nStage Four Result: Program generated at {program_path}")
+            program_paths = self.stage_four(blocks, stage_one_result["program_instruction"], output_filename)
+            print(f"\nStage Four Result: Generated 3 program variants")
+            for i, path in enumerate(program_paths):
+                print(f"  Variant {i+1}: {path}")
         else:
             if not stage_one_result["building_blocks"]:
                 print("\nStage Two Result: No building blocks identified, treating as complex image")
-                # Generate a program for the complex image
+                # Generate 3 different programs for the complex image with varying temperatures
                 complex_tag = f"complex_{os.path.splitext(file_name)[0]}"
+                output_filename = os.path.splitext(file_name)[0]
+                program_paths = []
                 
                 # Create the prompt template for complex image
                 complex_template = """
@@ -377,15 +394,8 @@ class PULSE:
                 I need you to create a program that draws the following complex image:
                 {instruction}
                 
-                Please provide:
-                1. A short summary (tldr) of what the program does
-                2. The Python Turtle program that draws the complex image
+                Please provide only the Python Turtle program without any additional text:
                 
-                Your response should be in the following format:
-                
-                tag: {tag}
-                tldr: [short summary]
-                program:
                 ```python
                 [your Python Turtle program here]
                 ```
@@ -399,45 +409,59 @@ class PULSE:
                 Response:
                 """
                 
-                # Create the LLMChain for complex image
+                # Create the base prompt
                 complex_prompt = PromptTemplate(
-                    input_variables=["instruction", "tag"],
+                    input_variables=["instruction"],
                     template=complex_template
                 )
-                complex_chain = LLMChain(llm=self.llm, prompt=complex_prompt)
                 
-                # Execute the chain
-                response = complex_chain.run(instruction=blocks[0]["instruction"], tag=complex_tag)
+                # Generate a base program with temperature=0 to add to the library
+                base_chain = LLMChain(llm=self.llm, prompt=complex_prompt)
+                base_response = base_chain.run(instruction=blocks[0]["instruction"])
                 
-                # Parse the response
-                tldr = ""
-                program = ""
+                # Extract the program code for the library
+                base_program = ""
+                if "```python" in base_response:
+                    base_program = base_response.split("```python")[1].split("```")[0].strip()
+                else:
+                    base_program = base_response.strip()
                 
-                lines = response.strip().split('\n')
-                for i, line in enumerate(lines):
-                    if line.startswith("tldr:"):
-                        tldr = line.replace("tldr:", "").strip()
-                    elif line.startswith("```python"):
-                        # Extract the program code
-                        program_lines = []
-                        j = i + 1
-                        while j < len(lines) and not lines[j].startswith("```"):
-                            program_lines.append(lines[j])
-                            j += 1
-                        program = "\n".join(program_lines)
-                        break
-                
-                # Add the complex image to the library
+                # Add the complex image to the library with a basic tldr
+                tldr = f"Draws a complex image based on: {blocks[0]['instruction'][:50]}..."
                 prompt = f"Generate a Python Turtle program that draws: {blocks[0]['instruction']}"
                 self.library.add_building_block(complex_tag, tldr, prompt)
                 
-                # Save the program to a file
-                output_filename = os.path.splitext(file_name)[0]
-                program_path = f"{OUTPUT_DIR}/{output_filename}.py"
-                with open(program_path, 'w') as f:
-                    f.write(program)
+                # Generate 3 different programs with varying temperatures
+                for i in range(3):
+                    # Create a new LLM with a different temperature for each iteration
+                    temperature = (i) * 0.1
+                    llm_with_temp = ChatOpenAI(model="gpt-4o", temperature=temperature)
+                    
+                    # Create a new chain with the temperature-specific LLM
+                    variant_chain = LLMChain(llm=llm_with_temp, prompt=complex_prompt)
+                    
+                    # Execute the chain
+                    response = variant_chain.run(instruction=blocks[0]["instruction"])
+                    
+                    # Extract the program code
+                    program = ""
+                    if "```python" in response:
+                        program = response.split("```python")[1].split("```")[0].strip()
+                    else:
+                        program = response.strip()
+                    
+                    # Save the program to a file with a unique name based on temperature
+                    variant_filename = f"{output_filename}_temp_{temperature:.1f}"
+                    program_path = f"{OUTPUT_DIR}/{variant_filename}.py"
+                    with open(program_path, 'w') as f:
+                        f.write(program)
+                    
+                    program_paths.append(program_path)
+                    print(f"Generated complex image variant {i+1}/3 with temperature {temperature:.1f}")
                 
-                print(f"\nComplex image program generated at {program_path}")
+                print(f"\nGenerated 3 complex image program variants")
+                for i, path in enumerate(program_paths):
+                    print(f"  Variant {i+1}: {path}")
             else:
                 print("\nStage Two Result: Some building blocks not found in the library")
                 # Stage Three: Generate programs for missing building blocks
@@ -448,14 +472,19 @@ class PULSE:
                 all_found, blocks = self.stage_two(stage_one_result)
                 
                 if all_found:
-                    # Stage Four: Generate the final program
+                    # Stage Four: Generate 3 different programs
                     output_filename = os.path.splitext(file_name)[0]
-                    program_path = self.stage_four(blocks, stage_one_result["program_instruction"], output_filename)
-                    print(f"\nStage Four Result: Program generated at {program_path}")
+                    program_paths = self.stage_four(blocks, stage_one_result["program_instruction"], output_filename)
+                    print(f"\nStage Four Result: Generated 3 program variants")
+                    for i, path in enumerate(program_paths):
+                        print(f"  Variant {i+1}: {path}")
                 else:
                     print("\nError: Still missing building blocks after Stage Three")
+                    # Return an empty list since we couldn't generate any programs
+                    program_paths = []
         
-        return f"{OUTPUT_DIR}/{os.path.splitext(file_name)[0]}.py"
+        # Return the actual list of program paths that were generated
+        return program_paths
 
 def main():
     """Main function to run the PULSE system."""
@@ -472,10 +501,10 @@ def main():
     
     # Load the input data
     try:
-        with open("Data/input_description.json", 'r') as f:
+        with open("Data/ascii_input_data_merged_50.json", 'r') as f:
             input_data = json.load(f)
     except FileNotFoundError:
-        print("Error: Input file 'Data/input_description.json' not found.")
+        print("Error: Input file 'Data/input.json' not found.")
         sys.exit(1)
     
     # Process each image in the input data
@@ -484,14 +513,19 @@ def main():
         label = item["label"]
         if len(label) < 1:
             continue
-        if file_name != "img_14.png":
+        if file_name != "img_2.png":
             continue
         description = item["description"]
         
-        program_path = pulse.process_image(file_name, label, description)
+        program_paths = pulse.process_image(file_name, label, description)
         
-        print(f"\nGenerated program for {file_name}: {program_path}")
-        print("To run the program, use: python", program_path)
+        if program_paths:
+            print(f"\nGenerated {len(program_paths)} program variants for {file_name}:")
+            for i, path in enumerate(program_paths):
+                print(f"  Variant {i+1}: {path}")
+                print(f"  To run this variant, use: python {path}")
+        else:
+            print(f"\nFailed to generate program variants for {file_name}")
         print("-" * 50)
 
 if __name__ == "__main__":
