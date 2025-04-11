@@ -16,11 +16,6 @@
       "prompt": "Generate a Python Turtle program that draws a pentagon. This program uses Python's Turtle graphics to draw a pentagon with a black border on a white background. import turtle\n\ndef draw_pentagon(side_length):\n    # Set up the turtle\n    turtle.bgcolor(\"white\")\n    turtle.color(\"black\")\n    turtle.pensize(2)\n    turtle.speed(1)\n\n    # Draw a pentagon\n    for _ in range(5):\n        turtle.forward(side_length)\n        turtle.right(72)  # 360/5 = 72 degrees\n\n    # Hide the turtle and finish\n    turtle.hideturtle()\n    turtle.done()\n\n# Set the side length of the pentagon\nside_length = 100\n\n# Call the function to draw the pentagon\ndraw_pentagon(side_length)"
     },
     {
-      "tag": "complex_img_0",
-      "tldr": "The program draws a square spiral starting from a central square, extending outward with each segment longer than the last, and finishes with a vertical line from the top-left corner to the bottom of the canvas.",
-      "prompt": "Generate a Python Turtle program that draws: To draw the described image, start by drawing a small square at the center of your canvas. From the bottom-right corner of this square, extend a line to the right, then turn 90 degrees clockwise to draw a line upward. Continue this pattern, extending each line segment slightly longer than the previous one to form a spiral. Ensure that each turn is 90 degrees clockwise, creating a square spiral that winds outward. Once the spiral reaches the top-left corner of the canvas, extend a vertical line downward from this corner to complete the image."
-    },
-    {
       "tag": "triangle",
       "tldr": "This program uses Python's Turtle graphics to draw an equilateral triangle with a black border on a white background.",
       "prompt": "Generate a Python Turtle program that draws a triangle. This program uses Python's Turtle graphics to draw an equilateral triangle with a black border on a white background. import turtle\n\n# Set up the screen\nscreen = turtle.Screen()\nscreen.bgcolor(\"white\")\n\n# Create a turtle for drawing\ntriangle_turtle = turtle.Turtle()\ntriangle_turtle.color(\"black\")\ntriangle_turtle.pensize(2)\n\n# Define the side length of the triangle\nside_length = 100\n\n# Draw an equilateral triangle\nfor _ in range(3):\n    triangle_turtle.forward(side_length)\n    triangle_turtle.left(120)\n\n# Hide the turtle and finish\ntriangle_turtle.hideturtle()\nturtle.done()"
@@ -39,6 +34,11 @@
       "tag": "semi-circle",
       "tldr": "This program uses Python's Turtle graphics to draw a semi-circle with a black border on a white background.",
       "prompt": "Generate a Python Turtle program that draws a semi-circle. This program uses Python's Turtle graphics to draw a semi-circle with a black border on a white background. import turtle\n\n# Setup the screen\nscreen = turtle.Screen()\nscreen.bgcolor(\"white\")\n\n# Create a turtle for drawing\nsemi_circle_turtle = turtle.Turtle()\nsemi_circle_turtle.color(\"black\")\nsemi_circle_turtle.speed(1)\n\n# Function to draw a semi-circle\ndef draw_semi_circle(radius):\n    semi_circle_turtle.penup()\n    semi_circle_turtle.goto(-radius, 0)  # Start at the leftmost point of the semi-circle\n    semi_circle_turtle.pendown()\n    semi_circle_turtle.setheading(90)  # Point upwards\n    semi_circle_turtle.circle(radius, 180)  # Draw a semi-circle\n\n# Draw the semi-circle\ndraw_semi_circle(100)\n\n# Hide the turtle and finish\nsemi_circle_turtle.hideturtle()\nturtle.done()"
+    },
+    {
+      "tag": "Spiral",
+      "tldr": "The program draws a square spiral starting from the center, winding outward clockwise, and ends with a vertical line from the top-left corner.",
+      "prompt": "Generate a Python Turtle program that draws: To create the described image, start by drawing a single continuous line from the center of your canvas. Begin forming a square spiral by drawing a series of connected straight lines that gradually increase in length, each turning 90 degrees clockwise from the previous line. Continue this pattern, ensuring that the spiral expands outward from the center. Once the spiral reaches the top-left corner of the canvas, extend the final line vertically downward to complete the image."
     }
   ]
 }

@@ -161,7 +161,7 @@
   },
   {
     "file_name": "img_32.png",
-    "description": "two regular pentagons connected by a horizontal line joining their bases. Both shapes are outlined with bold black lines and are evenly spaced and aligned in a straight row.",
+    "description": "two regular pentagons with white background connected by a horizontal line joining their bases. Both shapes are outlined with bold black lines and are evenly spaced and aligned in a straight row.",
     "label": "Compositional"
   },
   {
@@ -171,7 +171,7 @@
   },
   {
     "file_name": "img_34.png",
-    "description": "two regular octagons connected by a horizontal line joining their bases. Both shapes are outlined with black lines and are symmetrically aligned on either side of the line.",
+    "description": "two small octagons connected by a horizontal line joining their bases. Both shapes are outlined with black lines and are symmetrically aligned on either side of the line.",
     "label": "Compositional"
   },
   {
@@ -206,7 +206,7 @@
   },
   {
     "file_name": "img_41.png",
-    "description": "five identical circles arranged in a horizontal row with interlocking together with overlapping edges. All circles are outlined with bold black lines, creating a chain-like appearance",
+    "description": "five identical circles arranged in a horizontal row with interlocking together with overlapping edges. All circles are outlined with bold black lines and their background is transparent, creating a chain-like appearance",
     "label": "Compositional"
   },
   {
@@ -221,12 +221,12 @@
   },
   {
     "file_name": "img_44.png",
-    "description": "five hollow black circles arranged in a horizontal line with overlapping edges.",
+    "description": "five black outlined circles with white background arranged in a horizontal row, all evenly spaced and touching each other side by side.",
     "label": "Compositional"
   },
   {
     "file_name": "img_45.png",
-    "description": "six hollow black circles arranged in a horizontal line with overlapping edges.",
+    "description": "six black outlined circles with white background arranged in a horizontal row, all evenly spaced and touching each other side by side.",
     "label": "Compositional"
   },
   {
@@ -236,12 +236,12 @@
   },
   {
     "file_name": "img_47.png",
-    "description": "six equilateral triangles arranged from left to right, each sharing a base edge with the next, each outlined with a bold black line.",
+    "description": "six equilateral triangles arranged from left to right with white background, each sharing a base edge with the next, each outlined with a bold black line.",
     "label": "Compositional"
   },
   {
     "file_name": "img_48.png",
-    "description": "three hollow black circles arranged in a horizontal line with overlapping edges.",
+    "description": "three black outlined circles with white background arranged in a horizontal row, all evenly spaced and touching each other side by side.",
     "label": "Compositional"
   },
   {
@@ -256,7 +256,7 @@
   },
   {
     "file_name": "img_51.png",
-    "description": "six overlapping octagons arranged in a circular pattern, with each octagon partially covering its neighbors. The shapes are evenly spaced and interconnected, creating a complex, flower-like or webbed geometric design.",
+    "description": "five overlapping octagons arranged in a circular pattern, with each octagon partially covering its neighbors. The shapes are evenly spaced and interconnected, creating a complex, flower-like or webbed geometric design.",
     "label": "Complex"
   },
   {
@@ -266,12 +266,12 @@
   },
   {
     "file_name": "img_53.png",
-    "description": " six overlapping circles arranged in a radial pattern, with each circle intersecting at the center. The configuration resembles a flower, with the circles forming petal-like shapes around a central point.",
+    "description": "five overlapping identical small circles arranged in a radial pattern, with each circle intersecting at the center. The configuration resembles a flower, with the circles forming petal-like shapes around a central point.",
     "label": "Compositional"
   },
   {
     "file_name": "img_54.png",
-    "description": "three non-overlapping triangles, each sharing a common vertex at the center. The triangles are symmetrically arranged in a Y-shaped pattern, with one triangle pointing downward and the other two pointing diagonally upward to the left and right.",
+    "description": "three non-overlapping triangles, each sharing a common vertex at the center. The triangles are symmetrically arranged in a Y-shaped pattern, with one triangle at bottom and the other two pointing diagonally upward to the left and right.",
     "label": "Compositional"
   },
   {
@@ -316,7 +316,7 @@
   },
   {
     "file_name": "img_63.png",
-    "description": "six identical curved lines arranged radially around a central point, forming a pinwheel or flower-like shape. Each curve extends outward, starting straight from the center and bending smoothly at the end",
+    "description": "six identical curved lines arranged radially around a central point, forming a pinwheel or flower-like shape. The lines are evenly spaced at 60-degree intervals, radiating outward in all directions. Each curve extends outward, starting straight from the center and bending smoothly at the end",
     "label": "Complex"
   },
   {
@@ -326,12 +326,12 @@
   },
   {
     "file_name": "img_65.png",
-    "description": "eight pentagons, each connected to the tip of a straight line radiating from a central point. The lines are evenly spaced, forming a symmetrical starburst pattern with a pentagon at the end of each ray.",
+    "description": "eight small pentagons, each one's base connected to the end of a straight line radiating from a central point. The lines are evenly spaced, forming a symmetrical starburst pattern with a pentagon at the end of each ray.",
     "label": "Compositional"
   },
   {
     "file_name": "img_66.png",
-    "description": "three circles connected to the ends of a Y-shaped structure, with each square placed at the tip of a straight line radiating from a central point.",
+    "description": "three black-outlined circles connected by three straight lines that meet at a central junction, forming a Y-shaped branching structure. Each circle is placed at the end of one of the three lines radiating outward from the central point. The overall structure resembles a simple three-way node or branching diagram.",
     "label": "Compositional"
   },
   {

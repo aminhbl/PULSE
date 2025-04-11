@@ -382,7 +382,7 @@ class PULSE:
                 
                 Your response should be in the following format:
                 
-                tag: {tag}
+                tag: [one word tag]
                 tldr: [short summary]
                 program:
                 ```python
@@ -406,7 +406,7 @@ class PULSE:
                 complex_chain = LLMChain(llm=self.llm, prompt=complex_prompt)
                 
                 # Execute the chain
-                response = complex_chain.run(instruction=blocks[0]["instruction"], tag=complex_tag)
+                response = complex_chain.run(instruction=description, tag=complex_tag)
                 
                 # Parse the response
                 tldr = ""
@@ -430,7 +430,7 @@ class PULSE:
                 
                 # Add the complex image to the library
                 prompt = f"Generate a Python Turtle program that draws: {blocks[0]['instruction']}"
-                self.library.add_building_block(complex_tag, tldr, prompt)
+                self.library.add_building_block(complex_tag, tldr, prompt + " " + program)
                 
                 # Save the program to a file
                 output_filename = os.path.splitext(file_name)[0]
@@ -485,7 +485,7 @@ def main():
         label = item["label"]
         if len(label) < 1:
             continue
-        if file_name != "img_97.png":
+        if file_name != "img_0.png":
             continue
         description = item["description"]
         

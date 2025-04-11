@@ -1,61 +1,43 @@
 import turtle
 
-def draw_spiral():
-    # Setup the turtle
-    turtle.speed(0)
-    turtle.bgcolor("white")
-    turtle.pencolor("black")
-    turtle.penup()
-    
-    # Start at the center of the canvas
-    turtle.goto(0, 0)
-    turtle.pendown()
-    
-    # Initial square size
-    size = 20
-    
-    # Draw the initial small square
-    for _ in range(4):
-        turtle.forward(size)
-        turtle.right(90)
-    
-    # Move to the bottom-right corner of the initial square
-    turtle.penup()
-    turtle.goto(size, -size)
-    turtle.pendown()
-    
-    # Draw the spiral
-    while True:
-        # Extend the line to the right
-        size += 20
-        turtle.forward(size)
-        
-        # Extend the line upward
-        size += 20
-        turtle.left(90)
-        turtle.forward(size)
-        
-        # Extend the line to the left
-        size += 20
-        turtle.left(90)
-        turtle.forward(size)
-        
-        # Extend the line downward
-        size += 20
-        turtle.left(90)
-        turtle.forward(size)
-        
-        # Check if the spiral has reached the top-left corner
-        if turtle.xcor() <= -turtle.window_width() // 2 or turtle.ycor() >= turtle.window_height() // 2:
-            break
-    
-    # Draw the final vertical line downward
-    turtle.left(90)
-    turtle.forward(turtle.window_height())
-    
-    # Hide the turtle and finish
-    turtle.hideturtle()
-    turtle.done()
+def draw_square_spiral(t, length, increment, turns):
+    for i in range(turns):
+        t.forward(length)
+        t.right(90)
+        length += increment
 
-# Run the program
-draw_spiral()
+def draw_vertical_line(t, length):
+    t.penup()
+    t.goto(-length/2, length/2)
+    t.pendown()
+    t.right(90)
+    t.forward(length)
+
+def main():
+    # Setup the screen
+    screen = turtle.Screen()
+    screen.bgcolor("white")
+
+    # Create a turtle
+    spiral_turtle = turtle.Turtle()
+    spiral_turtle.color("black")
+    spiral_turtle.speed(0)  # Fastest speed
+    spiral_turtle.penup()
+    spiral_turtle.goto(0, 0)
+    spiral_turtle.pendown()
+
+    # Draw the square spiral
+    initial_length = 10
+    increment = 10
+    turns = 20
+    draw_square_spiral(spiral_turtle, initial_length, increment, turns)
+
+    # Draw the vertical line from the top-left corner
+    draw_vertical_line(spiral_turtle, initial_length + increment * (turns - 1))
+
+    # Hide the turtle and finish
+    spiral_turtle.hideturtle()
+    screen.mainloop()
+
+if __name__ == "__main__":
+    main()
