@@ -1,4 +1,4 @@
-# PULSE — Prompt Utilization for Library-based Synthesis Enhancement
+# PULSE: Prompt Utilization for Library-based Synthesis Enhancement
 
 ## Overview
 
