@@ -18,22 +18,23 @@ num_pentagons = 8
 # Size of each pentagon
 size = 100
 
-# Angle between each pentagon
-angle_between = 360 / num_pentagons
+# Calculate the angle to rotate each pentagon
+angle = 360 / num_pentagons
 
 # Calculate the distance to move the turtle to the starting point of each pentagon
-distance = size / (2 * math.tan(math.pi / 5))
+radius = size / (2 * math.sin(math.pi / 5))  # Radius of the circumscribed circle of the pentagon
+center_distance = 2 * radius * math.sin(math.pi / num_pentagons)
 
-# Draw the pentagons
+# Draw the pattern
 for i in range(num_pentagons):
     t.penup()
     t.goto(0, 0)
-    t.forward(distance)
+    t.forward(center_distance)
     t.pendown()
     draw_pentagon(size)
     t.penup()
     t.goto(0, 0)
-    t.right(angle_between)
+    t.right(angle)
 
 # Hide the turtle and display the window
 t.hideturtle()

@@ -2,26 +2,26 @@ import turtle
 
 # Set up the turtle
 t = turtle.Turtle()
-t.speed(0)  # Fastest speed
+t.speed(0)
 turtle.bgcolor("white")
 
-# Function to draw a hollow circle
-def draw_hollow_circle(x, y, radius):
+# Function to draw a circle with a black outline and white fill
+def draw_circle(x, y, radius):
     t.penup()
     t.goto(x, y - radius)
     t.pendown()
+    t.color("black", "white")
+    t.begin_fill()
     t.circle(radius)
-    t.penup()
+    t.end_fill()
 
-# Initial position
-start_x = -150
-y = 0
+# Parameters
 radius = 50
-spacing = 30  # Overlapping spacing
+spacing = 2 * radius
 
-# Draw six hollow circles
+# Draw six circles in a row
 for i in range(6):
-    draw_hollow_circle(start_x + i * (2 * radius - spacing), y, radius)
+    draw_circle(i * spacing, 0, radius)
 
 # Hide the turtle and display the window
 t.hideturtle()

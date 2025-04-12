@@ -1,4 +1,5 @@
 import turtle
+import math
 
 def draw_pentagon(t, size):
     for _ in range(5):
@@ -10,10 +11,29 @@ def draw_square(t, size):
         t.forward(size)
         t.right(90)
 
-def draw_cluster(t, size, angle):
+def draw_cluster(t, size, angle_offset):
+    # Draw pentagon
     draw_pentagon(t, size)
-    t.right(angle)
+    
+    # Position for square
+    t.penup()
+    t.forward(size / 2)
+    t.right(90)
+    t.forward(size / 2)
+    t.left(90 + angle_offset)
+    t.pendown()
+    
+    # Draw square
     draw_square(t, size)
+    
+    # Reset position
+    t.penup()
+    t.left(90 + angle_offset)
+    t.backward(size / 2)
+    t.left(90)
+    t.backward(size / 2)
+    t.right(90)
+    t.pendown()
 
 def main():
     screen = turtle.Screen()
@@ -21,19 +41,21 @@ def main():
     
     t = turtle.Turtle()
     t.speed(0)
+    t.penup()
+    t.goto(0, 0)
+    t.pendown()
     
-    size = 100
-    angles = [0, 15, 30, 45, 60]
-    positions = [(-200, 100), (0, 100), (200, 100), (-100, -100), (100, -100)]
+    size = 50
+    angle_between_clusters = 72
     
-    for pos, angle in zip(positions, angles):
+    for i in range(5):
+        draw_cluster(t, size, i * 15)
         t.penup()
-        t.goto(pos)
+        t.right(angle_between_clusters)
+        t.forward(size * 3)
         t.pendown()
-        draw_cluster(t, size, angle)
     
     t.hideturtle()
     screen.mainloop()
 
-if __name__ == "__main__":
-    main()
+main()

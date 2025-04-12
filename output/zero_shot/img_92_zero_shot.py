@@ -1,45 +1,41 @@
 import turtle
 
-def draw_triangle(t, size):
+def draw_snowflake_arm(t, length, gap, triangle_size):
+    t.penup()
+    t.forward(gap)
+    t.pendown()
+    t.forward(length)
+    t.left(120)
     for _ in range(3):
-        t.forward(size)
+        t.forward(triangle_size)
         t.left(120)
-
-def draw_snowflake_arm(t, arm_length, triangle_size):
+    t.right(120)
     t.penup()
-    t.forward(arm_length)
-    t.pendown()
-    t.forward(arm_length)
-    t.penup()
-    t.forward(arm_length)
-    t.pendown()
-    draw_triangle(t, triangle_size)
-    t.penup()
-    t.backward(3 * arm_length + triangle_size)
+    t.backward(length + gap)
     t.pendown()
 
-def draw_snowflake(t, num_arms, arm_length, triangle_size):
-    angle = 360 / num_arms
-    for _ in range(num_arms):
-        draw_snowflake_arm(t, arm_length, triangle_size)
-        t.left(angle)
+def draw_snowflake(t, arms, length, gap, triangle_size):
+    angle = 360 / arms
+    for _ in range(arms):
+        draw_snowflake_arm(t, length, gap, triangle_size)
+        t.right(angle)
 
-def main():
-    screen = turtle.Screen()
-    screen.bgcolor("lightblue")
+# Set up the turtle
+screen = turtle.Screen()
+screen.bgcolor("white")
 
-    snowflake = turtle.Turtle()
-    snowflake.speed(0)
-    snowflake.color("blue")
+snowflake_turtle = turtle.Turtle()
+snowflake_turtle.speed(0)  # Fastest speed
 
-    num_arms = 8
-    arm_length = 20
-    triangle_size = 15
+# Parameters for the snowflake
+arms = 8
+line_length = 100
+gap = 20
+triangle_size = 20
 
-    draw_snowflake(snowflake, num_arms, arm_length, triangle_size)
+# Draw the snowflake
+draw_snowflake(snowflake_turtle, arms, line_length, gap, triangle_size)
 
-    snowflake.hideturtle()
-    screen.mainloop()
-
-if __name__ == "__main__":
-    main()
+# Hide the turtle and display the window
+snowflake_turtle.hideturtle()
+screen.mainloop()

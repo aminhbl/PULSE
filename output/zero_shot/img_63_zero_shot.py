@@ -1,8 +1,8 @@
 import turtle
 import math
 
-def draw_curve(t, length, angle, extent):
-    for _ in range(extent):
+def draw_curve(t, length, angle):
+    for _ in range(60):
         t.forward(length)
         t.left(angle)
 
@@ -11,21 +11,19 @@ def draw_flower():
     screen.bgcolor("white")
 
     t = turtle.Turtle()
-    t.speed(0)
-    t.width(2)
+    t.speed(0)  # Fastest speed
 
-    num_petals = 6
-    angle_between_petals = 360 / num_petals
+    num_lines = 6
+    angle_between_lines = 360 / num_lines
     curve_length = 2
-    curve_angle = 1
-    curve_extent = 60
+    curve_angle = 3
 
-    for _ in range(num_petals):
+    for _ in range(num_lines):
         t.penup()
         t.goto(0, 0)
         t.pendown()
-        draw_curve(t, curve_length, curve_angle, curve_extent)
-        t.left(angle_between_petals)
+        draw_curve(t, curve_length, curve_angle)
+        t.left(angle_between_lines)
 
     t.hideturtle()
     screen.mainloop()

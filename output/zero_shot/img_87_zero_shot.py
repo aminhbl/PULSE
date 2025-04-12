@@ -1,44 +1,32 @@
 import turtle
 
-def draw_snowflake_arm(t, length, circle_radius):
-    # Draw a short space
-    t.penup()
-    t.forward(length)
-    t.pendown()
-    
-    # Draw a short line
-    t.forward(length)
-    
-    # Draw another short space
-    t.penup()
-    t.forward(length)
-    t.pendown()
-    
-    # Draw a small circle at the end
-    t.circle(circle_radius)
-    
-    # Move back to the center
-    t.penup()
-    t.backward(3 * length + circle_radius * 2)
-    t.pendown()
-
-def draw_snowflake(t, num_arms, arm_length, circle_radius):
-    angle = 360 / num_arms
-    for _ in range(num_arms):
-        draw_snowflake_arm(t, arm_length, circle_radius)
-        t.right(angle)
-
-# Set up the turtle
+# Set up the screen
 screen = turtle.Screen()
 screen.bgcolor("white")
 
-snowflake_turtle = turtle.Turtle()
-snowflake_turtle.speed(0)  # Fastest speed
-snowflake_turtle.color("blue")
+# Create a turtle for drawing
+snowflake = turtle.Turtle()
+snowflake.speed(0)  # Fastest drawing speed
+snowflake.color("blue")
 
-# Draw the snowflake
-draw_snowflake(snowflake_turtle, 5, 20, 5)
+# Function to draw a single arm of the snowflake
+def draw_arm():
+    snowflake.penup()
+    snowflake.forward(50)  # Move forward to start the arm
+    snowflake.pendown()
+    snowflake.forward(50)  # Draw the arm
+    snowflake.penup()
+    snowflake.forward(20)  # Move to the position for the circle
+    snowflake.pendown()
+    snowflake.circle(10)   # Draw a small circle at the end
+    snowflake.penup()
+    snowflake.backward(120)  # Return to the center
+
+# Draw the five-armed snowflake
+for _ in range(5):
+    draw_arm()
+    snowflake.right(72)  # Turn right to space the arms evenly
 
 # Hide the turtle and display the window
-snowflake_turtle.hideturtle()
+snowflake.hideturtle()
 screen.mainloop()

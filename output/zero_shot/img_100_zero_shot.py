@@ -1,36 +1,33 @@
 import turtle
+import math
 
-def draw_snowflake_arm():
-    # Draw a short space
-    turtle.penup()
-    turtle.forward(20)
-    turtle.pendown()
-    
-    # Draw a short line
-    turtle.forward(20)
-    
-    # Draw another short space
-    turtle.penup()
-    turtle.forward(20)
-    turtle.pendown()
-    
-    # Draw a small semicircle
-    turtle.circle(10, 180)
+# Set up the screen
+screen = turtle.Screen()
+screen.bgcolor("white")
 
-def draw_snowflake():
-    for _ in range(8):
-        draw_snowflake_arm()
-        turtle.penup()
-        turtle.home()
-        turtle.right(45 * (_ + 1))
-        turtle.pendown()
+# Create a turtle
+snowflake = turtle.Turtle()
+snowflake.speed(0)  # Fastest speed
 
-# Set up the turtle
-turtle.speed(0)  # Fastest speed
-turtle.hideturtle()
+# Function to draw a single arm of the snowflake
+def draw_arm():
+    snowflake.penup()
+    snowflake.forward(50)  # Move forward to start the arm
+    snowflake.pendown()
+    snowflake.forward(50)  # Draw the line part of the arm
+    snowflake.penup()
+    snowflake.forward(10)  # Gap before the semicircle
+    snowflake.pendown()
+    snowflake.circle(10, 180)  # Draw a semicircle
+    snowflake.penup()
+    snowflake.backward(110)  # Return to the center
+    snowflake.pendown()
 
-# Draw the snowflake
-draw_snowflake()
+# Draw the eight-armed snowflake
+for _ in range(8):
+    draw_arm()
+    snowflake.right(45)  # Rotate to the next arm position
 
-# Finish
-turtle.done()
+# Hide the turtle and display the window
+snowflake.hideturtle()
+screen.mainloop()

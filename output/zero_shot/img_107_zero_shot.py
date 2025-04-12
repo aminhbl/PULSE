@@ -9,7 +9,7 @@ screen.bgcolor("white")
 t = turtle.Turtle()
 t.speed(0)  # Fastest speed
 
-# Function to draw a circle of a given radius
+# Function to draw a circle
 def draw_circle(radius):
     t.circle(radius)
 
@@ -29,9 +29,9 @@ num_clusters = 5
 # Radius of each circle
 circle_radius = 20
 # Distance from the center to the center of each cluster
-cluster_distance = 100
+cluster_distance = circle_radius * 4
 
-# Draw the clusters in a circular pattern
+# Draw clusters in a circular pattern
 for i in range(num_clusters):
     angle = (360 / num_clusters) * i
     t.penup()
@@ -41,6 +41,6 @@ for i in range(num_clusters):
     t.pendown()
     draw_cluster(circle_radius)
 
-# Hide the turtle and display the result
+# Hide the turtle and display the window
 t.hideturtle()
 screen.mainloop()

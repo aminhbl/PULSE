@@ -1,27 +1,28 @@
 import turtle
 
-# Set up the turtle
-t = turtle.Turtle()
-t.speed(0)  # Fastest speed
-turtle.bgcolor("white")
+# Set up the screen
+screen = turtle.Screen()
+screen.bgcolor("white")
 
-# Function to draw a hollow circle
-def draw_hollow_circle(x, y, radius):
-    t.penup()
-    t.goto(x, y - radius)
-    t.pendown()
-    t.circle(radius)
-    t.penup()
+# Create a turtle for drawing
+drawer = turtle.Turtle()
+drawer.speed(0)
+drawer.penup()
 
-# Parameters
-radius = 50
-spacing = 20  # Overlapping edges
+# Constants
+num_circles = 5
+circle_radius = 50
+circle_diameter = circle_radius * 2
+spacing = 0  # No extra spacing, circles are touching
 
-# Draw five hollow circles
-start_x = -2 * (radius + spacing)
-for i in range(5):
-    draw_hollow_circle(start_x + i * (2 * radius + spacing), 0, radius)
+# Draw the circles
+for i in range(num_circles):
+    # Move to the starting position for each circle
+    drawer.goto(i * (circle_diameter + spacing) - (circle_diameter * (num_circles - 1) / 2), 0)
+    drawer.pendown()
+    drawer.circle(circle_radius)
+    drawer.penup()
 
-# Hide the turtle and display the window
-t.hideturtle()
-turtle.done()
+# Hide the turtle and display the result
+drawer.hideturtle()
+screen.mainloop()

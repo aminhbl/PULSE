@@ -1,28 +1,39 @@
 import turtle
 
-# Set up the screen
-screen = turtle.Screen()
-screen.bgcolor("white")
+# Set up the turtle
+t = turtle.Turtle()
+t.speed(0)  # Fastest speed
+turtle.bgcolor("white")
 
-# Create a turtle for drawing
-pen = turtle.Turtle()
-pen.speed(0)  # Fastest speed
-pen.penup()
+# Function to draw a hollow circle
+def draw_hollow_circle(radius):
+    t.penup()
+    t.forward(radius)
+    t.left(90)
+    t.pendown()
+    t.circle(radius)
+    t.penup()
+    t.right(90)
+    t.backward(radius)
+    t.pendown()
 
-# Constants
-num_circles = 8
-radius = 20
-distance_from_center = 100
+# Number of circles
+num_circles = 7
+# Radius of each small circle
+small_circle_radius = 20
+# Radius of the large circle on which small circles are placed
+large_circle_radius = 100
 
-# Draw circles
+# Draw the circles
 for i in range(num_circles):
-    angle = 360 / num_circles * i
-    pen.goto(distance_from_center * turtle.cos(turtle.radians(angle)),
-             distance_from_center * turtle.sin(turtle.radians(angle)))
-    pen.pendown()
-    pen.circle(radius)
-    pen.penup()
+    t.penup()
+    t.goto(0, 0)
+    t.setheading(0)
+    t.left(i * (360 / num_circles))
+    t.forward(large_circle_radius)
+    t.pendown()
+    draw_hollow_circle(small_circle_radius)
 
 # Hide the turtle and display the window
-pen.hideturtle()
-screen.mainloop()
+t.hideturtle()
+turtle.done()

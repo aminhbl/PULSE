@@ -1,15 +1,6 @@
 import turtle
 import math
 
-# Set up the screen
-screen = turtle.Screen()
-screen.bgcolor("white")
-
-# Create a turtle
-pen = turtle.Turtle()
-pen.speed(0)
-pen.hideturtle()
-
 # Function to draw a pentagon
 def draw_pentagon(t, size, angle):
     for _ in range(5):
@@ -17,35 +8,42 @@ def draw_pentagon(t, size, angle):
         t.right(72 + angle)
 
 # Function to draw a cluster of two overlapping pentagons
-def draw_cluster(t, size, overlap_angle, overlap_distance):
-    # Draw the first pentagon
+def draw_cluster(t, size, overlap_angle):
     draw_pentagon(t, size, 0)
-    # Move to the starting position of the second pentagon
     t.penup()
-    t.forward(overlap_distance)
+    t.forward(size / 5)  # Move slightly forward for overlap
     t.pendown()
-    # Draw the second pentagon with a slight rotation
     draw_pentagon(t, size, overlap_angle)
+    t.penup()
+    t.backward(size / 5)  # Move back to original position
+    t.pendown()
+
+# Setup turtle
+screen = turtle.Screen()
+screen.bgcolor("white")
+t = turtle.Turtle()
+t.speed(0)
+t.pensize(2)
 
 # Parameters
 num_clusters = 5
-cluster_radius = 150
-pentagon_size = 50
-overlap_angles = [5, 10, 15, 20, 25]  # Varying overlap angles
-overlap_distances = [10, 15, 20, 25, 30]  # Varying overlap distances
+size = 100
+angle_increment = 10
+overlap_angle = 0
 
-# Draw clusters in a circular pattern
+# Draw clusters in a circular arrangement
 for i in range(num_clusters):
-    # Calculate the angle for the current cluster
-    angle = i * (360 / num_clusters)
-    # Move to the starting position for the current cluster
-    pen.penup()
-    pen.goto(cluster_radius * math.cos(math.radians(angle)), cluster_radius * math.sin(math.radians(angle)))
-    pen.pendown()
-    pen.setheading(angle)
-    # Draw the cluster
-    draw_cluster(pen, pentagon_size, overlap_angles[i], overlap_distances[i])
+    t.penup()
+    t.goto(0, 0)
+    t.setheading(90)  # Start facing upwards
+    t.right(i * (360 / num_clusters))  # Rotate to the cluster position
+    t.forward(150)  # Move to the cluster position
+    t.pendown()
+    
+    draw_cluster(t, size, overlap_angle)
+    
+    overlap_angle += angle_increment  # Gradually change the overlap angle
 
-# Hide the turtle and display the window
-pen.hideturtle()
-turtle.done()
+# Hide turtle and display the window
+t.hideturtle()
+screen.mainloop()

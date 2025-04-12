@@ -1,44 +1,32 @@
 import turtle
+import math
 
-def draw_square(t, size):
-    for _ in range(4):
-        t.forward(size)
+# Set up the turtle
+t = turtle.Turtle()
+t.speed(0)  # Fastest speed
+turtle.bgcolor("white")
+
+# Function to draw a single arm of the snowflake
+def draw_arm():
+    t.penup()
+    t.forward(20)  # Move forward to start the arm, leaving a gap
+    t.pendown()
+    t.forward(50)  # Draw the line of the arm
+    t.penup()
+    t.forward(10)  # Move forward to start the square
+    t.pendown()
+    for _ in range(4):  # Draw a square
+        t.forward(20)
         t.right(90)
-
-def draw_snowflake_arm(t, arm_length, square_size, angle):
     t.penup()
-    t.forward(arm_length)
+    t.backward(80)  # Move back to the center
     t.pendown()
-    t.forward(arm_length)
-    t.penup()
-    t.forward(arm_length)
-    t.pendown()
-    draw_square(t, square_size)
-    t.penup()
-    t.backward(3 * arm_length + square_size / 2)
-    t.right(angle)
 
-def draw_snowflake(t, num_arms, arm_length, square_size):
-    angle = 360 / num_arms
-    for _ in range(num_arms):
-        draw_snowflake_arm(t, arm_length, square_size, angle)
+# Draw the seven-armed snowflake
+for i in range(7):
+    draw_arm()
+    t.right(360 / 7)  # Evenly space the arms
 
-def main():
-    screen = turtle.Screen()
-    screen.bgcolor("white")
-
-    snowflake = turtle.Turtle()
-    snowflake.speed(0)
-    snowflake.color("blue")
-
-    num_arms = 7
-    arm_length = 20
-    square_size = 20
-
-    draw_snowflake(snowflake, num_arms, arm_length, square_size)
-
-    snowflake.hideturtle()
-    screen.mainloop()
-
-if __name__ == "__main__":
-    main()
+# Hide the turtle and display the window
+t.hideturtle()
+turtle.done()

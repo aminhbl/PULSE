@@ -1,19 +1,6 @@
 import turtle
-import math
 
-# Function to draw a heptagon
-def draw_heptagon(t, size):
-    for _ in range(7):
-        t.forward(size)
-        t.left(360 / 7)
-
-# Function to move the turtle to a specific position without drawing
-def move_to(t, x, y):
-    t.penup()
-    t.goto(x, y)
-    t.pendown()
-
-# Setup the screen
+# Set up the screen
 screen = turtle.Screen()
 screen.bgcolor("white")
 
@@ -21,29 +8,35 @@ screen.bgcolor("white")
 t = turtle.Turtle()
 t.speed(0)
 
-# Define the size of the heptagon and the length of the connecting lines
-heptagon_size = 50
-line_length = 100
+# Function to draw a heptagon
+def draw_heptagon(size):
+    for _ in range(7):
+        t.forward(size)
+        t.left(360 / 7)
 
-# Calculate the angle for the Y-shape
-angle = 120
+# Function to draw a line with a heptagon at the end
+def draw_line_with_heptagon(length, heptagon_size):
+    t.forward(length)
+    draw_heptagon(heptagon_size)
+    t.backward(length)
 
-# Draw the Y-shaped structure with heptagons at the ends
-for i in range(3):
-    # Draw the connecting line
-    t.forward(line_length)
-    
-    # Draw the heptagon
-    draw_heptagon(t, heptagon_size)
-    
-    # Move back to the center
-    t.penup()
-    t.backward(line_length)
-    t.pendown()
-    
-    # Rotate for the next arm of the Y
-    t.left(angle)
+# Main drawing function
+def draw_y_shape_with_heptagons():
+    line_length = 100
+    heptagon_size = 40
 
-# Hide the turtle and display the window
+    for _ in range(3):
+        draw_line_with_heptagon(line_length, heptagon_size)
+        t.left(120)
+
+# Position the turtle
+t.penup()
+t.goto(0, 0)
+t.pendown()
+
+# Draw the Y-shaped structure with heptagons
+draw_y_shape_with_heptagons()
+
+# Hide the turtle and display the result
 t.hideturtle()
 screen.mainloop()

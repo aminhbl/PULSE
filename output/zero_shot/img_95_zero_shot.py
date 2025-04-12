@@ -10,13 +10,13 @@ def draw_arm():
     t.penup()
     t.forward(20)  # Short space
     t.pendown()
-    t.forward(30)  # Short line
+    t.forward(20)  # Short line
     t.penup()
     t.forward(20)  # Short space
     t.pendown()
-    t.circle(10)   # Small circle at the end
+    t.circle(30)   # Big circle at the end
     t.penup()
-    t.backward(70) # Move back to the center
+    t.backward(60) # Move back to the center
 
 # Draw the seven-sided snowflake pattern
 for _ in range(7):
