@@ -42,7 +42,7 @@ PULSE is a system that builds a library of prompts for solving program synthesis
 
 4. Run the generated programs to see the drawings:
    ```
-   python output/img_0.py
+   python output/single_pulse/img_0.py
    ```
 
 
