@@ -526,7 +526,7 @@
   },
   {
     "file_name": "img_105.png",
-    "description": "three clusters, each consisting of one large arc and one small arc facing each other. These clusters are arranged in a circular pattern, evenly spaced around a central area.",
+    "description": "three clusters, each consisting of one large semicircle and one small semicircle facing each other. These clusters are arranged in a circular pattern, evenly spaced around a central area.",
     "label": "Complex"
   },
   {
@@ -536,7 +536,7 @@
   },
   {
     "file_name": "img_107.png",
-    "description": "five identical clusters, each made up of two touching circles. These clusters are arranged in a circular pattern.",
+    "description": "five identical clusters, each made up of two touching circles. These clusters are arranged in a circular pattern and they do not overlap.",
     "label": "Compositional"
   },
   {
@@ -546,12 +546,12 @@
   },
   {
     "file_name": "img_109.png",
-    "description": "five clusters, each consisting of a pentagon and a square of the same size overlapping each other. In each cluster, the square is positioned differently relative to the pentagon, with varying angles and overlap regions.",
+    "description": "five clusters, each consisting of a pentagon and a square of the same size overlapping each other. In each cluster, the square is positioned differently relative to the pentagon, with varying angles and overlap regions. The clusters are evenly spaced at 72-degree intervals and not overlapping, forming a rotating appearance.",
     "label": "Complex"
   },
   {
     "file_name": "img_110.png",
-    "description": "six clusters, each consisting of a pentagon and a square of the same size overlapping each other, with each pentagon slightly touching its neighboring pentagons. In each cluster, the square is positioned differently relative to the pentagon, with varying angles and overlap regions.",
+    "description": "six clusters, each consisting of a pentagon and a square of the same size overlapping each other, with each pentagon slightly touching its neighboring pentagons. In each cluster, the square is positioned differently relative to the pentagon, with varying angles and overlap regions. The clusters are evenly spaced at 60-degree intervals and not overlapping, forming a rotating appearance.",
     "label": "Complex"
   }
 ]
