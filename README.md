@@ -35,7 +35,7 @@ PULSE is a system that builds a library of prompts for solving program synthesis
 
 2. Run the PULSE system:
    ```
-   python run_pulse.py
+   python src/main.py
    ```
 
 3. The system will process each image description and generate Python Turtle programs in the `output/` directory.
