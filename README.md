@@ -12,7 +12,7 @@ PULSE is a system that builds a library of prompts for solving program synthesis
    ```
    pip install -r requirements.txt
    ```
-3. Set up your OpenAI API key in a `.env` file in the roof of the project: 
+3. Set up your OpenAI API key in a `.env` file in the root of the project: 
    ```
    OPENAI_API_KEY=YOUR_API_KEY
    ```
@@ -21,7 +21,7 @@ PULSE is a system that builds a library of prompts for solving program synthesis
 
 ### Basic Usage
 
-1. Prepare your input data in `Data/input.json` with the following format:
+1. Prepare your input data in `Data/input_description.json` with the following format:
    ```json
    [
      {
