@@ -485,8 +485,6 @@ def main():
         label = item["label"]
         if len(label) < 1:
             continue
-        if file_name != "img_91.png":
-            continue
         description = item["description"]
         
         program_path = pulse.process_image(file_name, label, description)
